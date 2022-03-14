@@ -1,0 +1,10 @@
+{
+  "simulation": "uk.gov.hmcts.paybubble.simulation.CCPaybubbleSCN",
+  "simulationId": "ccpaybubblescn",
+  "start": 1646921028218,
+  "description": "XUI Journeys for all Services",
+  "scenarios": ["PrivateLawFL01"],
+  "assertions": [
+
+  ]
+}

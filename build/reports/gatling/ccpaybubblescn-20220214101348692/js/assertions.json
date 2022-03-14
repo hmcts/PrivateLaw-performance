@@ -1,0 +1,10 @@
+{
+  "simulation": "uk.gov.hmcts.paybubble.simulation.CCPaybubbleSCN",
+  "simulationId": "ccpaybubblescn",
+  "start": 1644833628692,
+  "description": "XUI Journeys for all Services",
+  "scenarios": ["Create Payment Scenario"],
+  "assertions": [
+
+  ]
+}

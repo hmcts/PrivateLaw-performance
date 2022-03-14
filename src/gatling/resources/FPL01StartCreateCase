@@ -1,0 +1,14 @@
+{
+  "data": {
+    "caseTypeOfApplication": "FL401"
+  },
+  "event": {
+    "description": "",
+    "id": "solicitorCreate",
+    "summary": ""
+  },
+  "event_data": {
+  "caseTypeOfApplication": "FL401"
+  "event_token": "${event_token}",
+  "ignore_warning": "false"
+}

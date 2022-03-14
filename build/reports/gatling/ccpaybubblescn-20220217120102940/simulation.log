@@ -1,0 +1,18 @@
+RUN	uk.gov.hmcts.paybubble.simulation.CCPaybubbleSCN	ccpaybubblescn	1645099262940	XUI Journeys for all Services	3.3.1
+USER	Way2Pay Credit Card Scenario 	1	START	1645099264248	1645099264248
+USER	Way2Pay Pay By Account Scenario 	2	START	1645099264250	1645099264250
+REQUEST	2		010_GetAuthToken	1645099264287	1645099265129	OK	 
+REQUEST	1		010_GetAuthToken	1645099264287	1645099265100	OK	 
+REQUEST	1		020_GetServiceToken	1645099265150	1645099265182	KO	j.n.UnknownHostException: No such host is known (rpe-service-auth-provider-perftest.service.core-compute-perftest.internal)
+REQUEST	2		020_GetServiceToken	1645099265150	1645099265182	KO	j.n.UnknownHostException: rpe-service-auth-provider-perftest.service.core-compute-perftest.internal
+ERROR	Ways2Pay_030_ServiceRequestPOST: Failed to build request: No attribute named 's2sToken' is defined 	1645099275175
+ERROR	Ways2Pay_030_ServiceRequestPOST: Failed to build request: No attribute named 's2sToken' is defined 	1645099275193
+ERROR	Ways2Pay_040_W2PPBAPaymentsGET: Failed to build request: No attribute named 's2sToken' is defined 	1645099290166
+ERROR	Ways2Pay_040_W2PPBAPaymentsGET: Failed to build request: No attribute named 's2sToken' is defined 	1645099290196
+ERROR	Ways2Pay_050_PaymentGroupReferenceByCaseGET: Failed to build request: No attribute named 's2sToken' is defined 	1645099305171
+ERROR	Ways2Pay_050_PaymentGroupReferenceByCaseGET: Failed to build request: No attribute named 's2sToken' is defined 	1645099305196
+ERROR	Ways2Pay_060_W2PCreditCardPaymentPOST: Failed to build request: No attribute named 'service_request_reference' is defined 	1645099320180
+ERROR	Ways2Pay_070_W2PPBAPaymentsPOST: Failed to build request: No attribute named 'service_request_reference' is defined 	1645099320211
+ERROR	Ways2Pay_080_W2PCardPaymentStatusGET: Failed to build request: No attribute named 's2sToken' is defined 	1645099335174
+USER	Way2Pay Pay By Account Scenario 	2	END	1645099264250	1645099335192
+USER	Way2Pay Credit Card Scenario 	1	END	1645099264248	1645099350178

@@ -1,0 +1,9 @@
+RUN	uk.gov.hmcts.paybubble.simulation.CCPaybubbleSCN	ccpaybubblescn	1644851199872	XUI Journeys for all Services	3.3.1
+USER	Way2Pay Scenario 	1	START	1644851201422	1644851201422
+REQUEST	1		PaymentAPIToken_010_GetAuthToken	1644851201453	1644851202475	OK	 
+REQUEST	1		PaymentAPIToken_020_GetServiceToken	1644851202516	1644851202614	OK	 
+REQUEST	1		PaymentAPIViewPayments_010_ServiceRequest	1644851212603	1644851215640	OK	 
+REQUEST	1		PaymentAPIViewPayments_010_PayByAccountPayments	1644851215641	1644851216120	KO	j.n.UnknownHostException: No such host is known (payment-api-perftest.service.core-compute-perftest.internalpba-accounts)
+REQUEST	1		PaymentAPIViewPayments_030_GetPaymentGroupReferenceByCase	1644851216134	1644851218097	OK	 
+REQUEST	1		PaymentAPIViewPayments_010_WaystoPayCreditCardPayment	1644851228071	1644851229145	OK	 
+USER	Way2Pay Scenario 	1	END	1644851201422	1644851229149

@@ -1,0 +1,8 @@
+RUN	uk.gov.hmcts.paybubble.simulation.CCPaybubbleSCN	ccpaybubblescn	1646920499219	XUI Journeys for all Services	3.3.1
+USER	PrivateLawFL01	1	START	1646920500459	1646920500459
+REQUEST	1		010_GetAuthToken	1646920500493	1646920500774	KO	status.find.is(200), but actually found 400
+REQUEST	1		020_GetServiceToken	1646920500832	1646920500864	KO	j.n.UnknownHostException: No such host is known (rpe-service-auth-provider-perftest.service.core-compute-perftest.internal)
+ERROR	Ways2Pay_030_ServiceRequestPOST: Failed to build request: No attribute named 'accessToken' is defined 	1646920510840
+ERROR	Ways2Pay_040_W2PPBAPaymentsGET: Failed to build request: No attribute named 's2sToken' is defined 	1646920525838
+ERROR	Ways2Pay_050_PaymentGroupReferenceByCaseGET: Failed to build request: No attribute named 'accessToken' is defined 	1646920540851
+ERROR	Ways2Pay_070_W2PPBAPaymentsPOST: Failed to build request: No attribute named 'service_request_reference' is defined 	1646920555853

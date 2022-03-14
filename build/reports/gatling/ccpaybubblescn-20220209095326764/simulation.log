@@ -1,0 +1,6 @@
+RUN	uk.gov.hmcts.paybubble.simulation.CCPaybubbleSCN	ccpaybubblescn	1644400406764	XUI Journeys for all Services	3.3.1
+USER	Create Payment Scenario	1	START	1644400407687	1644400407687
+REQUEST	1		PaymentAPIToken_010_GetAuthToken	1644400407714	1644400408206	OK	 
+REQUEST	1		PaymentAPIToken_020_GetServiceToken	1644400408249	1644400408327	OK	 
+REQUEST	1		PaymentAPIOrders_020_CreatePayment	1644400418310	1644400421373	OK	 
+USER	Create Payment Scenario	1	END	1644400407687	1644400431379

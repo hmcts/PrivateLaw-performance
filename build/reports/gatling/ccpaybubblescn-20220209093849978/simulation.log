@@ -1,0 +1,11 @@
+RUN	uk.gov.hmcts.paybubble.simulation.CCPaybubbleSCN	ccpaybubblescn	1644399529978	XUI Journeys for all Services	3.3.1
+USER	Add Order Scenario	1	START	1644399530962	1644399530962
+USER	Create Payment Scenario	2	START	1644399530964	1644399530964
+REQUEST	2		PaymentAPIToken_010_GetAuthToken	1644399530992	1644399531548	OK	 
+REQUEST	1		PaymentAPIToken_010_GetAuthToken	1644399530992	1644399531597	OK	 
+REQUEST	2		PaymentAPIToken_020_GetServiceToken	1644399531592	1644399531688	OK	 
+REQUEST	1		PaymentAPIToken_020_GetServiceToken	1644399531600	1644399531717	OK	 
+REQUEST	1		PaymentAPIOrders_010_AddOrder	1644399541748	1644399542012	OK	 
+REQUEST	2		PaymentAPIOrders_020_CreatePayment	1644399541672	1644399542160	KO	jsonPath($..payment_reference).find.exists preparation crashed: Jackson failed to parse into a valid AST: c.f.j.c.JsonParseException: Unrecognized token 'The': was expecting (JSON String, Number, Array, Object or token 'null', 'true' or 'false')  at [Source: (io.netty.buffer.ByteBufInputStream); line: 1, column: 5]
+USER	Add Order Scenario	1	END	1644399530962	1644399552002
+USER	Create Payment Scenario	2	END	1644399530964	1644399552158

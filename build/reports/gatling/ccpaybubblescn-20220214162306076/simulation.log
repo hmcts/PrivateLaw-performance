@@ -1,0 +1,9 @@
+RUN	uk.gov.hmcts.paybubble.simulation.CCPaybubbleSCN	ccpaybubblescn	1644855786076	XUI Journeys for all Services	3.3.1
+USER	Way2Pay Pay By Account Scenario 	1	START	1644855787429	1644855787429
+REQUEST	1		PaymentAPIToken_010_GetAuthToken	1644855787459	1644855788961	OK	 
+REQUEST	1		PaymentAPIToken_020_GetServiceToken	1644855789004	1644855789077	OK	 
+REQUEST	1		PaymentAPIViewPayments_010_ServiceRequest	1644855799072	1644855801661	OK	 
+REQUEST	1		PaymentAPIViewPayments_010_PayByAccountPayments	1644855801663	1644855806947	OK	 
+REQUEST	1		PaymentAPIViewPayments_030_GetPaymentGroupReferenceByCase	1644855806950	1644855808078	OK	 
+REQUEST	1		PaymentAPIViewPayments_010_PayByAccountPayments	1644855818053	1644855821867	OK	 
+USER	Way2Pay Pay By Account Scenario 	1	END	1644855787429	1644855821872

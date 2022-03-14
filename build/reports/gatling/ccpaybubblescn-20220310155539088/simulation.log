@@ -1,0 +1,5 @@
+RUN	uk.gov.hmcts.paybubble.simulation.CCPaybubbleSCN	ccpaybubblescn	1646927739088	XUI Journeys for all Services	3.3.1
+ERROR	PRL_020_005_SignIn: Failed to build request: No attribute named 'csrfToken' is defined 	1646927740061
+GROUP	1	PRL_020_SignIn	1646927740046	1646927740069	0	KO
+USER	PrivateLawFL01	1	START	1646927740038	1646927740038
+USER	PrivateLawFL01	1	END	1646927740038	1646927740072

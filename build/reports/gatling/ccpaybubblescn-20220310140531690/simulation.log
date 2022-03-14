@@ -1,0 +1,10 @@
+RUN	uk.gov.hmcts.paybubble.simulation.CCPaybubbleSCN	ccpaybubblescn	1646921131690	XUI Journeys for all Services	3.3.1
+USER	PrivateLawFL01	1	START	1646921132758	1646921132758
+REQUEST	1	PRL_010_Homepage	PRL_010_005_Homepage	1646921132797	1646921133113	OK	 
+REQUEST	1	PRL_010_Homepage	PRL_010_010_HomepageConfigUI	1646921133148	1646921133218	OK	 
+REQUEST	1	PRL_010_Homepage	PRL_010_015_HomepageConfigJson	1646921133219	1646921133234	KO	j.n.UnknownHostException: No such host is known (payment-api-perftest.service.core-compute-perftest.internal)
+REQUEST	1	PRL_010_Homepage	PRL_010_020_HomepageTCEnabled	1646921133251	1646921133251	KO	j.n.UnknownHostException: payment-api-perftest.service.core-compute-perftest.internal
+REQUEST	1	PRL_010_Homepage	PRL_010_025_HomepageIsAuthenticated	1646921133252	1646921133252	KO	j.n.UnknownHostException: payment-api-perftest.service.core-compute-perftest.internal
+REQUEST	1	PRL_010_Homepage	PRL_010_030_AuthLogin	1646921133253	1646921133253	KO	j.n.UnknownHostException: payment-api-perftest.service.core-compute-perftest.internal
+GROUP	1	PRL_010_Homepage	1646921132768	1646921133253	404	KO
+USER	PrivateLawFL01	1	END	1646921132758	1646921139172

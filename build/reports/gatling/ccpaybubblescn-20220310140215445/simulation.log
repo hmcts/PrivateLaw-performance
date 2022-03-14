@@ -1,0 +1,3 @@
+RUN	uk.gov.hmcts.paybubble.simulation.CCPaybubbleSCN	ccpaybubblescn	1646920935445	XUI Journeys for all Services	3.3.1
+USER	PrivateLawFL01	1	END	1646920938928	1646920939007
+USER	PrivateLawFL01	1	START	1646920938928	1646920938928
