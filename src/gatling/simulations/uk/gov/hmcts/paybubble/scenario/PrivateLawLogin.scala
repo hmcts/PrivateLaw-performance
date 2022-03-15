@@ -69,7 +69,7 @@ object PrivateLawLogin {
        // .post(IdamUrl + "/login?client_id=xuiwebapp&redirect_uri="+baseURL+"oauth2/callback&state=${state}&nonce=${nonce}&response_type=code&scope=profile")
         .post(IdamUrl + "/login?client_id=xuiwebapp&redirect_uri="+baseURL+"oauth2/callback&state=${state}&nonce=${nonce}&response_type=code&scope=profile%20openid%20roles%20manage-user%20create-user%20search-user&prompt=")
         .formParam("username", "fprl_caseworker_solicitor@mailinator.com")
-        .formParam("password", "Pass19word")
+        .formParam("password")
         .formParam("save", "Sign in")
         .formParam("selfRegistrationEnabled", "false")
         .formParam("_csrf", "${csrfToken}")
