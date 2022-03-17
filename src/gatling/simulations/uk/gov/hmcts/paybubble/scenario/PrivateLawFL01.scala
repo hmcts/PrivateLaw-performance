@@ -6,7 +6,7 @@ import uk.gov.hmcts.paybubble.scenario.PrivateLawLogin.{baseURL, orgDomain}
 import uk.gov.hmcts.paybubble.util.{CommonHeader, Environment, LoginHeader}
 
 object PrivateLawFL01 {
-
+/*
   val IdamUrl = Environment.IdamURL
   val baseURL = Environment.baseURL
   val orgDomain = Environment.baseDomainOrg
@@ -753,6 +753,8 @@ val RespondentDetails =
           .check(status.is(404)))
       }
 
+
+ */
 
  */
 }

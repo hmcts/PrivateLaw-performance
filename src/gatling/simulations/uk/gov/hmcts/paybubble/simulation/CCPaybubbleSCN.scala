@@ -63,12 +63,14 @@ CCPaybubbleSCN extends Simulation {
 		.silentResources
 
 
-	val PRLFL01 = scenario("PrivateLawFL01").repeat(1)
+	/*val PRLFL01 = scenario("PrivateLawFL01").repeat(1)
 		{
 			exec(PrivateLawLogin.homePage)
 			.exec(PrivateLawLogin.PRLLogin)
 				.exec(PrivateLawFL01.Cases)
 		}
+
+	 */
 
 	val C100 = scenario("PrivateLawC100").repeat(1)
 	{

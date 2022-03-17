@@ -76,10 +76,12 @@ object PrivateLawC100 {
   group("PRL_C100_020_Create_Case") {
     exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
       .exec(getCookieValue(CookieKey("__auth__").withDomain("manage-case.aat.platform.hmcts.net").saveAs("authTokenResp")))
+
     .exec(http("PRL_010_005_PRL_010_CreateCase")
      // .get(baseURL + "/cases/case-create/PRIVATELAW/C100/solicitorCreate/solicitorCreate1")
       .get(baseURL + "/data/internal/case-types/C100/event-triggers/solicitorCreate?ignore-warning=false")
       .headers(CommonHeaderC100.case_Type_Get_Header)
+      .check(jsonPath("$.event_token").saveAs("event_token"))
       .check(substring("Solicitor application")))
 
     //  .exec(getCookieValue(CookieKey("event_token").withDomain(orgDomain).saveAs("event_token")))
@@ -106,13 +108,15 @@ object PrivateLawC100 {
   .group("PRL_C100_040_Solicitor_Application") {
     exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
       .exec(getCookieValue(CookieKey("__auth__").withDomain("manage-case.aat.platform.hmcts.net").saveAs("authTokenResp")))
-    .exec(http("C100_StartCreateCase")
+
+      .exec(http("C100_StartCreateCase")
       .post(baseURL + "/data/case-types/C100/validate?pageId=solicitorCreate1")
       .headers(CommonHeaderC100.post_Header)
      // .header("event_token", "${authTokenResp}")
       .body(ElFileBody("C100ApplicantCaseName.json"))
-      .check(css("input[name='applicantCaseName']", "value").saveAs("CaseName"))
-      .check(substring("${CaseName}"))).exitHereIfFailed
+      .check(substring("applicantCaseName")))
+    //  .check(css("input[name='applicantCaseName']", "value").saveAs("CaseName"))
+     // .check(substring("${CaseName}"))).exitHereIfFailed
   }
 
   .group("PRL_C100_050_Solicitor_Check") {
