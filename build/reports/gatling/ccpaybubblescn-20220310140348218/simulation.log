@@ -1,5 +1,0 @@
-RUN	uk.gov.hmcts.paybubble.simulation.CCPaybubbleSCN	ccpaybubblescn	1646921028218	XUI Journeys for all Services	3.3.1
-USER	PrivateLawFL01	1	START	1646921029230	1646921029230
-REQUEST	1	PRL_010_Homepage	PRL_010_005_Homepage	1646921029266	1646921029301	KO	j.n.UnknownHostException: No such host is known (payment-api-perftest.service.core-compute-perftest.internal)
-GROUP	1	PRL_010_Homepage	1646921029240	1646921029318	35	KO
-USER	PrivateLawFL01	1	END	1646921029230	1646921029323

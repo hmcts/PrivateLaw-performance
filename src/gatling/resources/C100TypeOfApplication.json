@@ -1,0 +1,9 @@
+{
+
+  "case_id": "1647255857298282",
+  "description": "Type of application",
+  "end_button_label": "Save and continue",
+  "event_token": "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJ2MGR0NGR2MTNwaWNrZ25qbDloaXRzOGRuayIsInN1YiI6ImIwYmFiNGM2LTBlZjctNGZmYi04OWVlLTVlNzgzNmQ1NWM4MSIsImlhdCI6MTY0NzI2ODA0MCwiY2FzZS1pZCI6IjQ4Mjg3NDMiLCJldmVudC1pZCI6InNlbGVjdEFwcGxpY2F0aW9uVHlwZSIsImNhc2UtdHlwZS1pZCI6IkMxMDAiLCJqdXJpc2RpY3Rpb24taWQiOiJQUklWQVRFTEFXIiwiY2FzZS1zdGF0ZSI6IkFXQUlUSU5HX1NVQk1JU1NJT05fVE9fSE1DVFMiLCJjYXNlLXZlcnNpb24iOiJkNmRlMzQwN2U4N2RlNDMzZWVkZDczYTc3MDZmNDU1N2U1ZDc0MzgzIiwiZW50aXR5LXZlcnNpb24iOjB9.__UI6wN7_XfoMGVoE3iTglgAlzYB3be_2VP6jtBn_Vo",
+  "id": "selectApplicationType",
+  "name": "Type of application"
+}

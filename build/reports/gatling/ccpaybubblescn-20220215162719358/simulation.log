@@ -1,9 +1,0 @@
-RUN	uk.gov.hmcts.paybubble.simulation.CCPaybubbleSCN	ccpaybubblescn	1644942439358	XUI Journeys for all Services	3.3.1
-USER	Way2Pay Pay By Account Scenario 	1	START	1644942440405	1644942440405
-REQUEST	1		010_GetAuthToken	1644942440435	1644942441255	OK	 
-REQUEST	1		020_GetServiceToken	1644942441306	1644942441547	OK	 
-REQUEST	1		Ways2Pay_030_ServiceRequestPOST	1644942451518	1644942454299	OK	 
-REQUEST	1		Ways2Pay_040_W2PPBAPaymentsGET	1644942454301	1644942458679	OK	 
-ERROR	Ways2Pay_050_PaymentGroupReferenceByCaseGET: Failed to build request: No attribute named 'caseid' is defined 	1644942458682
-REQUEST	1		Ways2Pay_060_W2PPBAPaymentsPOST	1644942458689	1644942459525	KO	status.find.is(201), but actually found 412
-USER	Way2Pay Pay By Account Scenario 	1	END	1644942440405	1644942459537

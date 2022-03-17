@@ -1,0 +1,18 @@
+{
+  "case_type": "C100",
+  "data": {
+    "applicantCaseName": "Jack",
+    "applicationDetails": "Because I want to",
+    "applicationPermissionRequired": "yes",
+    "applicationPermissionRequiredReason": "YAy",
+    "consentOrder": "Yes",
+
+
+    "draftConsentOrderFile":
+    {
+      "document_filename": "2MB.pdf",
+    }
+  },
+  "id": "1647255857298282",
+  "jurisdiction": "PRIVATELAW"
+}

@@ -1,0 +1,17 @@
+{
+  "description": "Family Private Law",
+  "id": "PRIVATELAW",
+  "name": "Family Private Law",
+  "description": "Apply for a court order to make arrangements for a child or resolve a dispute about their upbringing",
+  "id": "solicitorCreate",
+  "name": "Solicitor application",
+  "events": {
+  "id": "C100",
+  "jurisdiction": null,
+  "name": "C100 Application",
+  "printable_document_url": null,
+  "security_classification": null
+
+},
+  "access":"create"
+}

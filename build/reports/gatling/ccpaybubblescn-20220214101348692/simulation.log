@@ -1,6 +1,0 @@
-RUN	uk.gov.hmcts.paybubble.simulation.CCPaybubbleSCN	ccpaybubblescn	1644833628692	XUI Journeys for all Services	3.3.1
-USER	Create Payment Scenario	1	START	1644833629913	1644833629913
-REQUEST	1		PaymentAPIToken_010_GetAuthToken	1644833629940	1644833630655	OK	 
-REQUEST	1		PaymentAPIToken_020_GetServiceToken	1644833630702	1644833630796	OK	 
-REQUEST	1		PaymentAPIOrders_020_CreatePayment	1644833640767	1644833641882	KO	jsonPath($..payment_reference).find.exists, found nothing
-USER	Create Payment Scenario	1	END	1644833629913	1644833651897

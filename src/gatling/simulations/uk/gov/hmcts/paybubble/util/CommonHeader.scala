@@ -38,6 +38,17 @@ object CommonHeader {
   "sec-fetch-user" -> "?1",
   "upgrade-insecure-requests" -> "1")
 
+ val headers_1 = Map(
+  "accept" -> "application/json",
+  "content-type" -> "application/json",
+  "request-id" -> "|Vm4PW.9/nLi",
+  "sec-ch-ua" -> """ Not A;Brand";v="99", "Chromium";v="98", "Google Chrome";v="98""",
+  "sec-ch-ua-mobile" -> "?0",
+  "sec-ch-ua-platform" -> "macOS",
+  "sec-fetch-dest" -> "empty",
+  "sec-fetch-mode" -> "cors",
+  "sec-fetch-site" -> "same-origin")
+
 
 
 

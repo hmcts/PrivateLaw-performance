@@ -1,6 +1,0 @@
-RUN	uk.gov.hmcts.paybubble.simulation.CCPaybubbleSCN	ccpaybubblescn	1644849058519	XUI Journeys for all Services	3.3.1
-USER	Online Payments Scenario 	1	START	1644849059761	1644849059761
-REQUEST	1		PaymentAPIToken_010_GetAuthToken	1644849059790	1644849060682	OK	 
-REQUEST	1		PaymentAPIToken_020_GetServiceToken	1644849060735	1644849060808	OK	 
-REQUEST	1		PaymentAPIOnline_010_OnlinePayments	1644849070785	1644849072306	OK	 
-USER	Online Payments Scenario 	1	END	1644849059761	1644849102291

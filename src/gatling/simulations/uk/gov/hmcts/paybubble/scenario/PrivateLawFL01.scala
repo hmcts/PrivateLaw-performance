@@ -8,8 +8,8 @@ import uk.gov.hmcts.paybubble.util.{CommonHeader, Environment, LoginHeader}
 object PrivateLawFL01 {
 
   val IdamUrl = Environment.IdamURL
-  val baseURL=Environment.baseURL
-  val orgDomain=Environment.baseDomainOrg
+  val baseURL = Environment.baseURL
+  val orgDomain = Environment.baseDomainOrg
   val MinThinkTime = Environment.minThinkTime
   val MaxThinkTime = Environment.maxThinkTime
 
@@ -20,15 +20,15 @@ object PrivateLawFL01 {
 
   val Cases =
 
-  group("PRL_010_Cases") {
-    exec(http("PRL_010_005_Cases")
-      .get(baseURL+"cases")
-      .headers(CommonHeader.headers_Cases)
-      .check(status.in(200, 304))).exitHereIfFailed
+    group("PRL_010_Cases") {
+      exec(http("PRL_010_005_Cases")
+        .get(baseURL + "cases")
+        .headers(CommonHeader.headers_Cases)
+        .check(status.in(200, 304))).exitHereIfFailed
 
-      .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+        .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
 
-      }
+    }
 
       .pause(MinThinkTime, MaxThinkTime)
 
@@ -39,7 +39,7 @@ object PrivateLawFL01 {
 
   group("PRL_010_CreateCase") {
     exec(http("PRL_010_005_PRL_010_CreateCase")
-      .get(baseURL+"aggregated/caseworkers/:uid/jurisdictions?access=create")
+      .get(baseURL + "aggregated/caseworkers/:uid/jurisdictions?access=create")
       .headers(CommonHeader.headers_CreateCases)
       .check(status.in(200, 304))).exitHereIfFailed
 
@@ -60,9 +60,10 @@ object PrivateLawFL01 {
 
   group("PRL_010_StartCreateCase") {
     exec(http("PRL_010_005_StartCreateCase")
-      .get(baseURL+"cases/case-create/PRIVATELAW/PRLAPPS/solicitorCreate/solicitorCreate2")
+      .get(baseURL + "cases/case-create/PRIVATELAW/PRLAPPS/solicitorCreate/solicitorCreate2")
       .headers(CommonHeader.headers_CreateCases)
       .check(status.in(200, 304))).exitHereIfFailed
+  }
 
       .group("PRL_010_StartCreateCaseFPL01") {
         exec(http("PRL_010_StartCreateCaseFPL01")
@@ -74,9 +75,9 @@ object PrivateLawFL01 {
       }
       .pause(MinThinkTime, MaxThinkTime)
 
-    //==================================================================================
-    //Business process : Confidentiality Statement
-    //==================================================================================
+      //==================================================================================
+      //Business process : Confidentiality Statement
+      //==================================================================================
 
       .group("PRL_010_Confidentiality Statement") {
         exec(http("PRL_010_Confidentiality Statement")
@@ -104,17 +105,19 @@ object PrivateLawFL01 {
       }
       .pause(MinThinkTime, MaxThinkTime)
 
-  //==================================================================================
-  //Business process : Log out of Paybubble
-  //==================================================================================
+    //==================================================================================
+    //Business process : Log out of Paybubble
+    //==================================================================================
+/*
+    val logout =
+      group("PaymentAPI${service}_${SignoutNumber}_Logout") {
+        exec(http("PaymentAPI${service}_${SignoutNumber}_010_Logout")
+          .get("/logout")
+          .headers(CommonHeader.headers_logout)
+          .check(regex("This page cannot be found"))
+          .check(status.is(404)))
+      }
 
-  val logout =
-  group("PaymentAPI${service}_${SignoutNumber}_Logout"){
-    exec(http("PaymentAPI${service}_${SignoutNumber}_010_Logout")
-    .get("/logout")
-      .headers(CommonHeader.headers_logout)
-      .check(regex("This page cannot be found"))
-      .check(status.is(404)))
-  }
 
+ */
 }

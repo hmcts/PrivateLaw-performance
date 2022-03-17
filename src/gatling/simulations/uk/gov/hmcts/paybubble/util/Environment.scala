@@ -10,7 +10,7 @@ object Environment {
 
  val environment: String = System.getProperty("env")
  val IdamURL = "https://idam-web-public.aat.platform.hmcts.net"
- val baseURL = "https://manage-case.aat.platform.hmcts.net/"
+ val baseURL = "https://manage-case.aat.platform.hmcts.net"
  val baseDomainOrg="manage-case.aat.platform.hmcts.net"
 
  val bulkScanURL = "http://ccpay-bulkscanning-api-perftest.service.core-compute-perftest.internal"

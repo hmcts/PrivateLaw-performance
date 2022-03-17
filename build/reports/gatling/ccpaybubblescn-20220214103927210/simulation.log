@@ -1,6 +1,0 @@
-RUN	uk.gov.hmcts.paybubble.simulation.CCPaybubbleSCN	ccpaybubblescn	1644835167210	XUI Journeys for all Services	3.3.1
-USER	Way2Pay Scenario 	1	START	1644835168179	1644835168179
-REQUEST	1		PaymentAPIToken_010_GetAuthToken	1644835168207	1644835169136	OK	 
-REQUEST	1		PaymentAPIToken_020_GetServiceToken	1644835169178	1644835169229	OK	 
-REQUEST	1		PaymentAPIViewPayments_010_ServiceRequest	1644835179212	1644835179984	KO	status.find.is(201), but actually found 422
-USER	Way2Pay Scenario 	1	END	1644835168179	1644835180004
