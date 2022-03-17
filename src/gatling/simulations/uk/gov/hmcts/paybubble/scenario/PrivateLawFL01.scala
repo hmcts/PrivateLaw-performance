@@ -17,11 +17,11 @@ object PrivateLawFL01 {
   //CreateCase
   //=====================================================================================
 
-
+//ad_001_Title
   val Cases =
 
     group("PRL_010_Cases") {
-      exec(http("PRL_010_005_Cases")
+      exec(http("PRL Cases")
         .get(baseURL + "cases")
         .headers(CommonHeader.headers_Cases)
         .check(status.in(200, 304))).exitHereIfFailed
@@ -37,20 +37,20 @@ object PrivateLawFL01 {
   //==================================================================================
   val CreateCases =
 
-  group("PRL_010_CreateCase") {
-    exec(http("PRL_010_005_PRL_010_CreateCase")
-      .get(baseURL + "aggregated/caseworkers/:uid/jurisdictions?access=create")
-      .headers(CommonHeader.headers_CreateCases)
-      .check(status.in(200, 304))).exitHereIfFailed
+    group("PRL_020_CreateCase") {
+      exec(http("PRL FPL01 CreateCase")
+        .get(baseURL + "aggregated/caseworkers/:uid/jurisdictions?access=create")
+        .headers(CommonHeader.headers_CreateCases)
+        .check(status.in(200, 304))).exitHereIfFailed
 
       .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
-
+  /*
       .exec(http("PRL_020_015_CreateCaseUserDetails")
         .get(baseURL + "/api/user/details")
         .headers(CommonHeader.headers_CreateCases)
         .check(status.in(200, 304)))
-
-  }
+  */
+    }
 
     .pause(MinThinkTime, MaxThinkTime)
 
@@ -242,7 +242,7 @@ object PrivateLawFL01 {
           .body(ElFileBody("FPL01WithoutNoticeOrderDetails2.json")))
       }
 
-            .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+        .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
 
       group("PRL_010_Fl100 WithoutNoticeOrderDetails3") {
         exec(http("PRL_010_Fl100 WithoutNoticeOrderDetails3")
@@ -255,16 +255,487 @@ object PrivateLawFL01 {
 
         .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
 
-      group("PRL_010_Fl100 WithoutNoticeOrderDetails3") {
-        exec(http("PRL_010_Fl100 WithoutNoticeOrderDetails3")
+      group("PRL_010_Fl100 WithoutNoticeOrderDetails4") {
+        exec(http("PRL_010_Fl100 WithoutNoticeOrderDetails4")
           .post(baseURL + "/data/case-types/PRLAPPS/validate?pageId=withoutNoticeOrderDetails4")
           .headers(CommonHeader.headers_WithoutNotice)
           .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
           .header("x-xsrf-token", "${XSRFToken}")
-          .body(ElFileBody("FPL01WithoutNoticeOrderDetails3.json")))
+          .body(ElFileBody("FPL01WithoutNoticeOrderDetails4.json")))
       }
 
         .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+      //Save and continue
+
+      group("PRL_010_Fl100 WithoutNoticeOrderDetails5") {
+        exec(http("PRL_010_Fl100 WithoutNoticeOrderDetails5")
+          .post(baseURL + "/data/cases/1647252224099105/events")
+          .headers(CommonHeader.headers_WithoutNotice)
+          .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+          .header("x-xsrf-token", "${XSRFToken}")
+          .body(ElFileBody("FPL01WithoutNoticeOrderDetails5.json")))
+      }
+
+        .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+      group("PRL_010_Fl100 WithoutNoticeOrderDetails6") {
+        exec(http("PRL_010_Fl100 WithoutNoticeOrderDetails6")
+          .post(baseURL + "/workallocation/searchForCompletable")
+          .headers(CommonHeader.headers_WithoutNotice)
+          .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+          .header("x-xsrf-token", "${XSRFToken}")
+          .body(ElFileBody("FPL01WithoutNoticeOrderDetails6.json")))
+      }
+
+        .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+      group("PRL_010_WithoutNoticeOrderDetails7") {
+        exec(http("PRL_010_WithoutNoticeOrderDetails7")
+          .get(baseURL + "/data/internal/cases/1647252224099105")
+          .headers(CommonHeader.headers_WithoutNotice)
+          .check(status.in(200, 304))).exitHereIfFailed
+
+          .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+      }
+    }
+        //ApplicantDetails
+        val ApplicantDetails =
+          group("PRL_010_ApplicantDetails") {
+            exec(http("PRL_010_ApplicantDetails")
+              .get(baseURL + "/cases/case-details/1647252224099105/trigger/applicantsDetails/applicantsDetails1")
+              .headers(CommonHeader.headers_ApplicantDetails)
+              .check(status.in(200, 304))).exitHereIfFailed
+
+              .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+          }
+            group("PRL_010_Fl100 ApplicantDetails2") {
+              exec(http("PRL_010_Fl100 ApplicantDetails2")
+                .post(baseURL + "/data/case-types/PRLAPPS/validate?pageId=applicantsDetails2")
+                .headers(CommonHeader.headers_ApplicantDetails)
+                .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+                .header("x-xsrf-token", "${XSRFToken}")
+                .body(ElFileBody("FPL01ApplicantDetails2.json")))
+            }
+
+              .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+  group("PRL_010_Fl100 ApplicantDetails3") {
+    exec(http("PRL_010_Fl100 ApplicantDetails3")
+      .post(baseURL + "/data/cases/1647252224099105/events")
+      .headers(CommonHeader.headers_ApplicantDetails)
+      .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+      .header("x-xsrf-token", "${XSRFToken}")
+      .body(ElFileBody("FPL01ApplicantDetails3.json")))
+  }
+
+    .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+  group("PRL_010_Fl100 ApplicantDetails4") {
+    exec(http("PRL_010_Fl100 ApplicantDetails4")
+      .post(baseURL + "/workallocation/searchForCompletable")
+      .headers(CommonHeader.headers_ApplicantDetails)
+      .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+      .header("x-xsrf-token", "${XSRFToken}")
+      .body(ElFileBody("FPL01ApplicantDetails4.json")))
+  }
+
+    .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+
+  group("PRL_010_Fl100 ApplicantDetails5") {
+    exec(http("PRL_010_Fl100 ApplicantDetails5")
+      .get(baseURL + "/data/internal/cases/1647252224099105")
+      .headers(CommonHeader.headers_ApplicantDetails)
+      .check(status.in(200, 304))).exitHereIfFailed
+
+      .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+  }
+
+//Respondent Details
+val RespondentDetails =
+  group("PRL_010_RespondentDetails") {
+    exec(http("PRL_010_RespondentDetails")
+      .get(baseURL + "/cases/case-details/1647252224099105/trigger/respondentsDetails/respondentsDetails1")
+      .headers(CommonHeader.headers_ApplicantDetails)
+      .check(status.in(200, 304))).exitHereIfFailed
+
+      .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+  }
+
+  group("PRL_010_RespondentDetails2") {
+    exec(http("PRL_010_RespondentDetails2")
+      .post(baseURL + "/data/case-types/PRLAPPS/validate?pageId=respondentsDetails2")
+      .headers(CommonHeader.headers_ApplicantDetails)
+      .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+      .header("x-xsrf-token", "${XSRFToken}")
+      .body(ElFileBody("FPL01RespondentDetails2.json")))
+  }
+
+    .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+  group("PRL_010_RespondentDetails3") {
+    exec(http("PRL_010_RespondentDetails3")
+      .post(baseURL + "/data/cases/1647252224099105/events")
+      .headers(CommonHeader.headers_ApplicantDetails)
+      .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+      .header("x-xsrf-token", "${XSRFToken}")
+      .body(ElFileBody("FPL01RespondentDetails3.json")))
+  }
+
+    .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+  group("PRL_010_RespondentDetails4") {
+    exec(http("PRL_010_RespondentDetails4")
+      .post(baseURL + "/workallocation/searchForCompletable")
+      .headers(CommonHeader.headers_ApplicantDetails)
+      .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+      .header("x-xsrf-token", "${XSRFToken}")
+      .body(ElFileBody("FPL01RespondentDetails4.json")))
+  }
+
+    .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+
+
+  //Applicants Family
+  val RespondentDetails =
+    group("PRL_010_ApplicantDetails") {
+      exec(http("PRL_010_ApplicantDetails")
+        .get(baseURL + "/cases/case-details/1647252224099105/trigger/fl401ApplicantFamilyDetails/fl401ApplicantFamilyDetails1")
+        .headers(CommonHeader.headers_ApplicantsFamiliy)
+        .check(status.in(200, 304))).exitHereIfFailed
+
+        .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+    }
+
+  group("PRL_010_ApplicantsFamily2") {
+    exec(http("PRL_010_ApplicantsFamily2")
+      .post(baseURL + "/data/case-types/PRLAPPS/validate?pageId=fl401ApplicantFamilyDetails1")
+      .headers(CommonHeader.headers_ApplicantsFamiliy)
+      .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+      .header("x-xsrf-token", "${XSRFToken}")
+      .body(ElFileBody("ApplicantsFamily2.json")))
+  }
+
+    .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+  group("PRL_010_ApplicantsFamily3") {
+    exec(http("PRL_010_ApplicantsFamily3")
+      .post(baseURL + "/data/cases/1647252224099105/events")
+      .headers(CommonHeader.headers_ApplicantsFamiliy)
+      .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+      .header("x-xsrf-token", "${XSRFToken}")
+      .body(ElFileBody("ApplicantsFamily3.json")))
+  }
+
+    .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+  group("PRL_010_ApplicantsFamily4") {
+    exec(http("PRL_010_ApplicantsFamily4")
+      .post(baseURL + "/workallocation/searchForCompletable")
+      .headers(CommonHeader.headers_ApplicantsFamiliy)
+      .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+      .header("x-xsrf-token", "${XSRFToken}")
+      .body(ElFileBody("ApplicantsFamily4.json")))
+  }
+    .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+  //relationship to respondent
+  val Relationshiptorespondent =
+    group("PRL_010_Relationshiptorespondent") {
+      exec(http("PRL_010_Relationshiptorespondent")
+        .get(baseURL + "/cases/case-details/1647252224099105/trigger/respondentRelationship/respondentRelationship1")
+        .headers(CommonHeader.headers_ApplicantsFamiliy)
+        .check(status.in(200, 304))).exitHereIfFailed
+
+        .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+    }
+
+  group("PRL_010_Relationshiptorespondent1") {
+    exec(http("PRL_010_Relationshiptorespondent1")
+      .post(baseURL + "/data/case-types/PRLAPPS/validate?pageId=respondentRelationship1")
+      .headers(CommonHeader.headers_ApplicantsFamiliy)
+      .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+      .header("x-xsrf-token", "${XSRFToken}")
+      .body(ElFileBody("FPL01RelationshiptoRespondent1.json")))
+  }
+    .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+  group("PRL_010_Relationshiptorespondent2") {
+    exec(http("PRL_010_Relationshiptorespondent2")
+      .post(baseURL + "/data/case-types/PRLAPPS/validate?pageId=respondentRelationship2")
+      .headers(CommonHeader.headers_ApplicantsFamiliy)
+      .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+      .header("x-xsrf-token", "${XSRFToken}")
+      .body(ElFileBody("FPL01RelationshiptoRespondent2.json")))
+  }
+    .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+  group("PRL_010_Relationshiptorespondent3") {
+    exec(http("PRL_010_Relationshiptorespondent3")
+      .post(baseURL + "/data/cases/1647252224099105/events")
+      .headers(CommonHeader.headers_ApplicantsFamiliy)
+      .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+      .header("x-xsrf-token", "${XSRFToken}")
+      .body(ElFileBody("FPL01RelationshiptoRespondent3.json")))
+  }
+    .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+  group("PRL_010_Relationshiptorespondent4") {
+    exec(http("PRL_010_Relationshiptorespondent4")
+      .post(baseURL + "/workallocation/searchForCompletable")
+      .headers(CommonHeader.headers_ApplicantsFamiliy)
+      .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+      .header("x-xsrf-token", "${XSRFToken}")
+      .body(ElFileBody("FPL01RelationshiptoRespondent4.json")))
+  }
+    .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+
+  //Respondent Behavior
+
+  val RespondentBehvaiour =
+    group("PRL_010_RespondentBehvaiour") {
+      exec(http("PRL_010_RespondentBehvaiour")
+        .get(baseURL + "/cases/case-details/1647252224099105/trigger/respondentBehaviour/respondentBehaviour1")
+        .headers(CommonHeader.headers_ApplicantsFamiliy)
+        .check(status.in(200, 304))).exitHereIfFailed
+
+        .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+    }
+
+  group("PRL_010_RespondentBehaviour1") {
+    exec(http("PRL_010_RespondentBehaviour1")
+      .post(baseURL + "/data/case-types/PRLAPPS/validate?pageId=respondentBehaviour1")
+      .headers(CommonHeader.headers_ApplicantsFamiliy)
+      .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+      .header("x-xsrf-token", "${XSRFToken}")
+      .body(ElFileBody("FPL01ResondentBehaviour1.json")))
+  }
+    .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+  group("PRL_010_RespondentBehaviour2") {
+    exec(http("PRL_010_RespondentBehaviour2")
+      .post(baseURL + "/data/cases/1647252224099105/events")
+      .headers(CommonHeader.headers_ApplicantsFamiliy)
+      .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+      .header("x-xsrf-token", "${XSRFToken}")
+      .body(ElFileBody("FPL01ResondentBehaviour2.json")))
+  }
+    .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+  group("PRL_010_RespondentBehaviour3") {
+    exec(http("PRL_010_RespondentBehaviour3")
+      .post(baseURL + "/workallocation/searchForCompletable")
+      .headers(CommonHeader.headers_ApplicantsFamiliy)
+      .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+      .header("x-xsrf-token", "${XSRFToken}")
+      .body(ElFileBody("FPL01ResondentBehaviour3.json")))
+  }
+    .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+  //the home
+  val TheHome =
+    group("PRL_010_TheHome") {
+      exec(http("PRL_010_TheHome")
+        .get(baseURL + "/cases/case-details/1647252224099105/trigger/fl401Home/fl401Home1")
+        .headers(CommonHeader.headers_ApplicantsFamiliy)
+        .check(status.in(200, 304))).exitHereIfFailed
+
+        .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+    }
+
+  group("PRL_010_TheHome1") {
+    exec(http("PRL_010_TheHome1")
+      .post(baseURL + "/data/case-types/PRLAPPS/validate?pageId=fl401Home1")
+      .headers(CommonHeader.headers_ApplicantsFamiliy)
+      .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+      .header("x-xsrf-token", "${XSRFToken}")
+      .body(ElFileBody("FPL01TheHome1.json")))
+  }
+    .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+  group("PRL_010_TheHome2") {
+    exec(http("PRL_010_TheHome2")
+      .post(baseURL + "/data/cases/1647252224099105/events")
+      .headers(CommonHeader.headers_ApplicantsFamiliy)
+      .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+      .header("x-xsrf-token", "${XSRFToken}")
+      .body(ElFileBody("FPL01TheHome2.json")))
+  }
+    .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+  group("PRL_010_TheHome2") {
+    exec(http("PRL_010_TheHome3")
+      .post(baseURL + "/workallocation/searchForCompletable")
+      .headers(CommonHeader.headers_ApplicantsFamiliy)
+      .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+      .header("x-xsrf-token", "${XSRFToken}")
+      .body(ElFileBody("FPL01ResondentBehaviour3.json")))
+  }
+    .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+//Other Proceedings
+
+  val OtherProceedings =
+    group("PRL_010_OtherProceedings") {
+      exec(http("PRL_010_OtherProceedings")
+        .get(baseURL + "/cases/case-details/1647252224099105/trigger/fl401OtherProceedings/fl401OtherProceedings1")
+        .headers(CommonHeader.headers_ApplicantsFamiliy)
+        .check(status.in(200, 304))).exitHereIfFailed
+
+        .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+    }
+
+  group("PRL_010_OtherProceedings1") {
+    exec(http("PRL_010_OtherProceedings1")
+      .post(baseURL + "/data/case-types/PRLAPPS/validate?pageId=fl401OtherProceedings1")
+      .headers(CommonHeader.headers_ApplicantsFamiliy)
+      .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+      .header("x-xsrf-token", "${XSRFToken}")
+      .body(ElFileBody("FPL01OtherProceedings1.json")))
+  }
+    .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+  group("PRL_010_OtherProceedings2") {
+    exec(http("PRL_010_OtherProceedings2")
+      .post(baseURL + "/data/cases/1647252224099105/events")
+      .headers(CommonHeader.headers_ApplicantsFamiliy)
+      .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+      .header("x-xsrf-token", "${XSRFToken}")
+      .body(ElFileBody("FPL01OtherProceedings2.json")))
+  }
+    .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+  group("PRL_010_OtherProceedings3") {
+    exec(http("PRL_010_OtherProceedings3")
+      .post(baseURL + "/workallocation/searchForCompletable")
+      .headers(CommonHeader.headers_ApplicantsFamiliy)
+      .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+      .header("x-xsrf-token", "${XSRFToken}")
+      .body(ElFileBody("FPL01OtherProceedings3.json")))
+  }
+    .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+
+  //Attending Hearing
+
+  val AttendingHearing =
+    group("PRL_010_AttendingHearing") {
+      exec(http("PRL_010_AttendingHearing")
+        .get(baseURL + "/cases/case-details/1647252224099105/trigger/attendingTheHearing/attendingTheHearing1")
+        .headers(CommonHeader.headers_ApplicantsFamiliy)
+        .check(status.in(200, 304))).exitHereIfFailed
+
+        .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+    }
+
+  group("PRL_010_AttendingHearing1") {
+    exec(http("PRL_010_AttendingHearing1")
+      .post(baseURL + "/data/case-types/PRLAPPS/validate?pageId=attendingTheHearing1")
+      .headers(CommonHeader.headers_ApplicantsFamiliy)
+      .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+      .header("x-xsrf-token", "${XSRFToken}")
+      .body(ElFileBody("FPL01AttendingHearing1.json")))
+
+    group("PRL_010_AttendingHearing2") {
+      exec(http("PRL_010_AttendingHearing2")
+        .post(baseURL + "/data/cases/1647252224099105/events")
+        .headers(CommonHeader.headers_ApplicantsFamiliy)
+        .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+        .header("x-xsrf-token", "${XSRFToken}")
+        .body(ElFileBody("FPL01AttendingHearing2.json")))
+
+    group("PRL_010_AttendingHearing3") {
+      exec(http("PRL_010_AttendingHearing3")
+        .post(baseURL + "/workallocation/searchForCompletable")
+        .headers(CommonHeader.headers_ApplicantsFamiliy)
+        .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+        .header("x-xsrf-token", "${XSRFToken}")
+        .body(ElFileBody("FPL01AttendingHearing2.json")))
+
+  //Welsh Language
+
+      val WelshLanguage =
+        group("PRL_010_Welsh") {
+          exec(http("PRL_010_Welsh")
+            .get(baseURL + "/cases/case-details/1647252224099105/trigger/welshLanguageRequirements/welshLanguageRequirements1")
+            .headers(CommonHeader.headers_ApplicantsFamiliy)
+            .check(status.in(200, 304))).exitHereIfFailed
+
+            .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+        }
+
+      group("PRL_010_Welsh1") {
+        exec(http("PRL_010_PRL_010_Welsh1")
+          .post(baseURL + "/data/case-types/PRLAPPS/validate?pageId=welshLanguageRequirements1")
+          .headers(CommonHeader.headers_ApplicantsFamiliy)
+          .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+          .header("x-xsrf-token", "${XSRFToken}")
+          .body(ElFileBody("FPL01Welsh1.json")))
+
+      group("PRL_010_Welsh2") {
+        exec(http("PRL_010_PRL_010_Welsh2")
+          .post(baseURL + "/data/cases/1647252224099105/events")
+          .headers(CommonHeader.headers_ApplicantsFamiliy)
+          .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+          .header("x-xsrf-token", "${XSRFToken}")
+          .body(ElFileBody("FPL01Welsh2.json")))
+
+      group("PRL_010_Welsh3") {
+        exec(http("PRL_010_PRL_010_Welsh3")
+          .post(baseURL + "/workallocation/searchForCompletable")
+          .headers(CommonHeader.headers_ApplicantsFamiliy)
+          .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+          .header("x-xsrf-token", "${XSRFToken}")
+          .body(ElFileBody("FPL01Welsh3.json")))
+
+
+  //Upload documents
+
+  val UploadDocuments =
+    group("PRL_010_UploadDoc") {
+      exec(http("PRL_010_UploadDoc")
+        .get(baseURL + "/cases/case-details/1647252224099105/trigger/fl401UploadDocuments/fl401UploadDocuments1")
+        .headers(CommonHeader.headers_ApplicantsFamiliy)
+        .check(status.in(200, 304))).exitHereIfFailed
+
+        .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+    }
+
+        group("PRL_010_UploadDoc1") {
+          exec(http("PRL_010_UploadDoc1")
+            .post(baseURL + "/data/case-types/PRLAPPS/validate?pageId=fl401UploadDocuments1")
+            .headers(CommonHeader.headers_ApplicantsFamiliy)
+            .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+            .header("x-xsrf-token", "${XSRFToken}")
+            .body(ElFileBody("FPL01UploadDoc1.json")))
+
+
+          group("PRL_010_UploadDoc2") {
+            exec(http("PRL_010_UploadDoc2")
+              .post(baseURL + "/data/case-types/PRLAPPS/validate?pageId=fl401UploadDocuments2")
+              .headers(CommonHeader.headers_ApplicantsFamiliy)
+              .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+              .header("x-xsrf-token", "${XSRFToken}")
+              .body(ElFileBody("FPL01UploadDoc2.json")))
+
+            group("PRL_010_UploadDoc3") {
+              exec(http("PRL_010_UploadDoc3")
+                .post(baseURL + "/data/cases/1647252224099105/events")
+                .headers(CommonHeader.headers_ApplicantsFamiliy)
+                .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+                .header("x-xsrf-token", "${XSRFToken}")
+                .body(ElFileBody("FPL01UploadDoc3.json")))
+
+            group("PRL_010_UploadDoc4") {
+                exec(http("PRL_010_UploadDoc4")
+                  .post(baseURL + "/workallocation/searchForCompletable")
+                  .headers(CommonHeader.headers_ApplicantsFamiliy)
+                  .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+                  .header("x-xsrf-token", "${XSRFToken}")
+                  .body(ElFileBody("FPL01UploadDoc4.json")))
+
 
   //==================================================================================
   //Business process : Log out of Paybubble

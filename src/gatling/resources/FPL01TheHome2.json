@@ -1,0 +1,90 @@
+{
+  "data":
+  {
+    "home":
+    {
+      "textAreaSomethingElse":null,
+      "everLivedAtTheAddress":"No",
+      "intendToLiveAtTheAddress":"yesBothOfThem",
+      "doAnyChildrenLiveAtAddress":"Yes",
+      "isPropertyAdapted":"No",
+      "howIsThePropertyAdapted":null,
+      "isThereMortgageOnProperty":"No",
+      "isPropertyRented":"No",
+      "doesApplicantHaveHomeRights":"No",
+      "furtherInformation":"the Home",
+      "address":
+      {
+        "AddressLine1":"Flat 1",
+        "AddressLine2":"214 Westferry Road",
+        "AddressLine3":"",
+        "PostTown":"London",
+        "County":"",
+        "PostCode":"E14 3RR",
+        "Country":"United Kingdom"
+      },
+      "peopleLivingAtThisAddress":["applicant","respondent"],
+      "children":[
+        {"value":
+        {"keepChildrenInfoConfidential":"Yes",
+          "childFullName":"Child One","childsAge":"12",
+          "isRespondentResponsibleForChild":"Yes"
+        },
+          "id":null
+        },
+        {
+          "value":
+          {
+            "keepChildrenInfoConfidential":"Yes",
+            "childFullName":"child two",
+            "childsAge":"13",
+            "isRespondentResponsibleForChild":"Yes"
+          },
+          "id":null
+        }],
+      "mortgages":
+      {
+        "textAreaSomethingElse":null,
+        "mortgageNumber":null,
+        "mortgageLenderName":null,
+        "mortgageNamedAfter":[],
+        "address":
+        {
+          "AddressLine1":null,
+          "AddressLine2":null,
+          "AddressLine3":null,
+          "PostTown":null,
+          "County":null,
+          "PostCode":null,
+          "Country":null
+        }
+      },
+      "landlords":
+      {
+        "textAreaSomethingElse":null,
+        "landlordName":null,
+        "mortgageNamedAfterList":[],
+        "address":
+        {
+          "AddressLine1":null,
+          "AddressLine2":null,
+          "AddressLine3":null,
+          "PostTown":null,
+          "County":null,
+          "PostCode":null,
+          "Country":null
+        }
+      },
+      "livingSituation":["ableToStayInHome"],
+      "familyHome":["payForRepairs"]
+    }
+  },
+  "event":
+  {
+    "id":"fl401Home",
+    "summary":"",
+    "description":""
+  },
+  "event_token":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJhOGphNmNlNDd1ZnA3azVpcm5oM3Y2bG82aiIsInN1YiI6ImIwYmFiNGM2LTBlZjctNGZmYi04OWVlLTVlNzgzNmQ1NWM4MSIsImlhdCI6MTY0NzQ0MDM4MiwiY2FzZS1pZCI6IjQ4Mjc5NTEiLCJldmVudC1pZCI6ImZsNDAxSG9tZSIsImNhc2UtdHlwZS1pZCI6IlBSTEFQUFMiLCJqdXJpc2RpY3Rpb24taWQiOiJQUklWQVRFTEFXIiwiY2FzZS1zdGF0ZSI6IkFXQUlUSU5HX1NVQk1JU1NJT05fVE9fSE1DVFMiLCJjYXNlLXZlcnNpb24iOiI3MzBlODc3NzZlODYyZjg5N2QwYjMzNTY5NTQ1NTAwZWE0NzMxY2Q1IiwiZW50aXR5LXZlcnNpb24iOjIyfQ.3ZDAzPr2_j5PfH6Qs77LFv9p82UUnckEaJ4hOLO3tkg",
+  "ignore_warning":false
+}
