@@ -1,0 +1,74 @@
+{
+  "data":
+  {
+    "applicantsFL401":
+    {
+      "firstName":"UI Performance",
+      "lastName":"Tester",
+      "previousName":null,
+      "dateOfBirth":"2020-01-01",
+      "gender":"male",
+      "otherGender":null,
+      "isAddressConfidential":"Yes",
+      "canYouProvideEmailAddress":"Yes",
+      "email":"Applicant@test.com",
+      "isEmailAddressConfidential":"Yes",
+      "phoneNumber":"07777777777",
+      "isPhoneNumberConfidential":"Yes",
+      "representativeFirstName":null,
+      "representativeLastName":"Performance",
+      "solicitorEmail":"performance@solicitor.com",
+      "solicitorTelephone":"07777777777",
+      "solicitorReference":"Adoption",
+      "dxNumber":"1234567890",
+      "isDateOfBirthUnknown":null,
+      "placeOfBirth":null,
+      "isAddressUnknown":null,
+      "isAtAddressLessThan5Years":null,
+      "addressLivedLessThan5YearsDetails":null,
+      "landline":null,
+      "relationshipToChildren":null,
+      "isDateOfBirthKnown":null,
+      "isCurrentAddressKnown":null,
+      "canYouProvidePhoneNumber":null,
+      "isPlaceOfBirthKnown":null,
+      "isAtAddressLessThan5YearsWithDontKnow":null,
+      "doTheyHaveLegalRepresentation":null,
+      "sendSignUpLink":null,
+      "respondentLivedWithApplicant":null,
+      "address":
+      {
+        "AddressLine1":"Flat 1",
+        "AddressLine2":"214 Westferry Road",
+        "AddressLine3":"",
+        "PostTown":"London",
+        "County":"",
+        "PostCode":"E14 3RR",
+        "Country":"United Kingdom"
+      },
+      "solicitorOrg":
+      {
+        "OrganisationID":"6SFJUH7",
+        "OrganisationName":"Aat orgtest57"
+      },
+      "solicitorAddress":
+      {"AddressLine1":"Flat 19",
+        "AddressLine2":"214 Westferry Road",
+        "AddressLine3":null,
+        "PostTown":"London",
+        "County":null,
+        "PostCode":"E14 3RR",
+        "Country":"United Kingdom"
+      },
+      "otherPersonRelationshipToChildren":[]
+    }
+  },
+  "event":
+  {
+    "id":"applicantsDetails",
+    "summary":"",
+    "description":""
+  },
+  "event_token":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJ0NWVmbnV2bnE1dG45M2g2NDduMmVoMG0xdSIsInN1YiI6ImIwYmFiNGM2LTBlZjctNGZmYi04OWVlLTVlNzgzNmQ1NWM4MSIsImlhdCI6MTY0NzM2NDE5MywiY2FzZS1pZCI6IjQ4Mjc5NTEiLCJldmVudC1pZCI6ImFwcGxpY2FudHNEZXRhaWxzIiwiY2FzZS10eXBlLWlkIjoiUFJMQVBQUyIsImp1cmlzZGljdGlvbi1pZCI6IlBSSVZBVEVMQVciLCJjYXNlLXN0YXRlIjoiQVdBSVRJTkdfU1VCTUlTU0lPTl9UT19ITUNUUyIsImNhc2UtdmVyc2lvbiI6ImVmNjkxZWYzYjUyZjQ0MDlkOTI5NTJhYzAyNTlhYzVmOGU2NWIwNTAiLCJlbnRpdHktdmVyc2lvbiI6N30.fvXJUh1jEg_-YEvAAgl6qxToT6ExbyTWdhrYEVegU7A",
+  "ignore_warning":false
+}

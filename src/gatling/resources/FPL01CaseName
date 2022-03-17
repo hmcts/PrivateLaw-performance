@@ -1,8 +1,6 @@
 {
   "data": {
-    "confidentialityStatementDisclaimer": [
-      "confidentialityStatementUnderstood"
-    ]
+    "applicantOrRespondentCaseName": "PerformanceTestFL01"
   },
   "event": {
     "description": "",
@@ -10,6 +8,7 @@
     "summary": ""
   },
   "event_data": {
+    "applicantOrRespondentCaseName": "PerformanceTestFL01",
     "caseTypeOfApplication": "FL401",
     "confidentialityStatementDisclaimer": [
       "confidentialityStatementUnderstood"

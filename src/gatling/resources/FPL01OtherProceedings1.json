@@ -1,0 +1,26 @@
+{
+  "data":
+  {
+    "fl401OtherProceedingDetails":
+    {
+      "hasPrevOrOngoingOtherProceeding":"no",
+      "fl401OtherProceedings":[]
+    }
+  },"event":
+{
+  "id":"fl401OtherProceedings",
+  "summary":"",
+  "description":""
+},
+  "event_data":
+{
+  "fl401OtherProceedingDetails":
+  {
+    "hasPrevOrOngoingOtherProceeding":"no",
+    "fl401OtherProceedings":[]
+  }
+},
+  "event_token":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3Y2s4ODBzMXJmYnJhZTA4bmFkdWlpdWcyayIsInN1YiI6ImIwYmFiNGM2LTBlZjctNGZmYi04OWVlLTVlNzgzNmQ1NWM4MSIsImlhdCI6MTY0NzQ0NTI5NywiY2FzZS1pZCI6IjQ4Mjc5NTEiLCJldmVudC1pZCI6ImZsNDAxT3RoZXJQcm9jZWVkaW5ncyIsImNhc2UtdHlwZS1pZCI6IlBSTEFQUFMiLCJqdXJpc2RpY3Rpb24taWQiOiJQUklWQVRFTEFXIiwiY2FzZS1zdGF0ZSI6IkFXQUlUSU5HX1NVQk1JU1NJT05fVE9fSE1DVFMiLCJjYXNlLXZlcnNpb24iOiI0NTA4NjA4MGMzZDhhMTFmZmFhZjA2NGViZjI1MGM5ODIwNDMzY2FiIiwiZW50aXR5LXZlcnNpb24iOjI0fQ.8FLupDcFY7t085ZqcQeQpRknX3tuTtqd2xb2BtJMfHc",
+  "ignore_warning":false,
+  "case_reference":"1647252224099105"
+}

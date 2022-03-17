@@ -7,24 +7,24 @@ import uk.gov.hmcts.paybubble.util.Environment._
 object IDAMHelper {
 
  /* private val USERNAME = "testytesttest@test.net"
-  private val PASSWORD = "4590fgvhbfgbDdffm3lk4j"*/
+  private val PASSWORD = ""*/
 // private val USERNAME = "james@swansea.gov.uk"
-//  private val PASSWORD = "Password123"
+//  private val PASSWORD = ""
   private val USERNAME = "ccdloadtest1@gmail.com"
-  private val PASSWORD = "Password12"
+  private val PASSWORD = ""
 // private val USERNAME = "emshowcase@hmcts.net"
- // private val PASSWORD = "4590fgvhbfgbDdffm3lk4j"
+ // private val PASSWORD = ""
   // below are for aat
 /*private val USERNAME = "bundle-tester--518511189@gmail.com"
-  private val PASSWORD = "4590fgvhbfgbDdffm3lk4j"*/
+  private val PASSWORD = ""*/
 
 
   val thinktime = Environment.thinkTime
 
   val getIdamToken =
     exec(http("010_GetAuthToken")
-        // .post(idamURL  + "/o/token?client_id=" + OAUTH_CLIENT + "&client_secret=" + IDAM_OAUTH_SECRET + "&grant_type=password&scope=openid profile roles search-user&username=kishanki@gmail.com&password=LevelAt12")
-          .post(IdamURL  + "/o/token?client_id=" + OAUTH_CLIENT + "&client_secret=" + IDAM_OAUTH_SECRET + "&grant_type=password&scope=openid profile roles search-user&username=perftestways2pay@mailnesia.com&password=LevelAt12")
+        // .post(idamURL  + "/o/token?client_id=" + OAUTH_CLIENT + "&client_secret=" + IDAM_OAUTH_SECRET + "&grant_type=password&scope=openid profile roles search-user&username=kishanki@gmail.com&password=")
+          .post(IdamURL  + "/o/token?client_id=" + OAUTH_CLIENT + "&client_secret=" + IDAM_OAUTH_SECRET + "&grant_type=password&scope=openid profile roles search-user&username=perftestways2pay@mailnesia.com&password=")
           .header("Content-Type", "application/x-www-form-urlencoded")
          .header("Content-Length", "0")
          .check(status is 200)

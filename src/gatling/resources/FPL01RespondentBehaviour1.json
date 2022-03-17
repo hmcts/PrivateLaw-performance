@@ -1,0 +1,29 @@
+{
+  "data":
+  {
+    "respondentBehaviourData":
+    {
+      "otherReasonApplicantWantToStopFromRespondentDoing":"Being Violent",
+      "applicantWantToStopFromRespondentDoing":["applicantStopFromRespondentEnum_Value_1"],
+      "applicantWantToStopFromRespondentDoingToChild":[]
+    }
+  },
+  "event":
+  {
+    "id":"respondentBehaviour",
+    "summary":"",
+    "description":""
+  },
+  "event_data":
+  {
+    "respondentBehaviourData":
+    {
+      "otherReasonApplicantWantToStopFromRespondentDoing":"Being Violent",
+      "applicantWantToStopFromRespondentDoing":["applicantStopFromRespondentEnum_Value_1"],
+      "applicantWantToStopFromRespondentDoingToChild":[]
+    }
+  },
+  "event_token":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJvamtkNzdvNWhmZm44MHBsNmtzMzUzaTQ0ZiIsInN1YiI6ImIwYmFiNGM2LTBlZjctNGZmYi04OWVlLTVlNzgzNmQ1NWM4MSIsImlhdCI6MTY0NzQzOTMxNSwiY2FzZS1pZCI6IjQ4Mjc5NTEiLCJldmVudC1pZCI6InJlc3BvbmRlbnRCZWhhdmlvdXIiLCJjYXNlLXR5cGUtaWQiOiJQUkxBUFBTIiwianVyaXNkaWN0aW9uLWlkIjoiUFJJVkFURUxBVyIsImNhc2Utc3RhdGUiOiJBV0FJVElOR19TVUJNSVNTSU9OX1RPX0hNQ1RTIiwiY2FzZS12ZXJzaW9uIjoiNmJmMTdlYTU0YTZiNTgwMDgwMTVkNDZkZDc5MTU4YzNjN2Q2N2E1NyIsImVudGl0eS12ZXJzaW9uIjoyMH0.qcqlHbwXVg6pzv9hC2Bky2tReNIEHS5AdJe65uwnxbg",
+  "ignore_warning":false,
+  "case_reference":"1647252224099105"
+}

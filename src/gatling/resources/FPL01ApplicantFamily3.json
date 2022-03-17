@@ -1,0 +1,17 @@
+{
+  "data":
+  {
+    "applicantFamilyDetails":
+    {
+      "doesApplicantHaveChildren":"No"
+    }
+  },
+  "event":
+  {
+    "id":"fl401ApplicantFamilyDetails",
+    "summary":"",
+    "description":""
+  },
+  "event_token":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJ2MmZkYnAyM2Nzbmp1NjhmMGQ3MTBibmpuOCIsInN1YiI6ImIwYmFiNGM2LTBlZjctNGZmYi04OWVlLTVlNzgzNmQ1NWM4MSIsImlhdCI6MTY0NzQzMzMzNiwiY2FzZS1pZCI6IjQ4Mjc5NTEiLCJldmVudC1pZCI6ImZsNDAxQXBwbGljYW50RmFtaWx5RGV0YWlscyIsImNhc2UtdHlwZS1pZCI6IlBSTEFQUFMiLCJqdXJpc2RpY3Rpb24taWQiOiJQUklWQVRFTEFXIiwiY2FzZS1zdGF0ZSI6IkFXQUlUSU5HX1NVQk1JU1NJT05fVE9fSE1DVFMiLCJjYXNlLXZlcnNpb24iOiJkMDMyNGRkMTE0OWRhMDc5MmMxYTA3NTg0OGJhZjFkMzFmZTM2M2ZkIiwiZW50aXR5LXZlcnNpb24iOjE1fQ.G-FfGG8sCO1F-wbGniZodiXjbUzeP4xVn7iz0d7OxLk",
+  "ignore_warning":false
+}

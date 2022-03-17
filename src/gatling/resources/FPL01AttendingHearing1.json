@@ -1,0 +1,27 @@
+{
+  "data":
+  {
+    "isWelshNeeded":"No",
+    "isInterpreterNeeded":"No",
+    "isDisabilityPresent":"No",
+    "isSpecialArrangementsRequired":"No",
+    "isIntermediaryNeeded":"No"
+  },
+  "event":
+  {
+    "id":"attendingTheHearing",
+    "summary":"",
+    "description":""
+  },
+  "event_data":
+  {
+    "isWelshNeeded":"No",
+    "isInterpreterNeeded":"No",
+    "isDisabilityPresent":"No",
+    "isSpecialArrangementsRequired":"No",
+    "isIntermediaryNeeded":"No"
+  },
+  "event_token":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJ0NXFhdXE1dW1rMW0zbGhmMDQ2N2R1MjA1ZiIsInN1YiI6ImIwYmFiNGM2LTBlZjctNGZmYi04OWVlLTVlNzgzNmQ1NWM4MSIsImlhdCI6MTY0NzQ0NjY0OCwiY2FzZS1pZCI6IjQ4Mjc5NTEiLCJldmVudC1pZCI6ImF0dGVuZGluZ1RoZUhlYXJpbmciLCJjYXNlLXR5cGUtaWQiOiJQUkxBUFBTIiwianVyaXNkaWN0aW9uLWlkIjoiUFJJVkFURUxBVyIsImNhc2Utc3RhdGUiOiJBV0FJVElOR19TVUJNSVNTSU9OX1RPX0hNQ1RTIiwiY2FzZS12ZXJzaW9uIjoiZjJlYzQ4NGFkZWVjNTVlODNiM2EwOGI2OWYyM2U5NGNmMDE3OTY0YyIsImVudGl0eS12ZXJzaW9uIjoyN30.J5wJ-T3qytXScGqzT82AAilZPFBDnBGMeev6JMEpHrc",
+  "ignore_warning":false,
+  "case_reference":"1647252224099105"
+}

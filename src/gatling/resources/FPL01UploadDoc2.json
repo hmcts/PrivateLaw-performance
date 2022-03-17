@@ -1,0 +1,54 @@
+{
+  "data":
+  {
+    "fl401UploadedDocuments":[
+      {
+        "id":null,
+        "value":
+        {
+          "document_url":"http://dm-store-aat.service.core-compute-aat.internal/documents/02a20b35-8099-49f7-b5da-f855a0e688ad",
+          "document_binary_url":"http://dm-store-aat.service.core-compute-aat.internal/documents/02a20b35-8099-49f7-b5da-f855a0e688ad/binary",
+          "document_filename":"PRL Draft Consent Order.docx"
+        }
+      }]
+  },
+  "event":
+  {
+    "id":"fl401UploadDocuments",
+    "summary":"",
+    "description":""
+  },
+  "event_data":
+  {
+    "fl401UploadWitnessDocuments":[
+      {
+        "id":null,"value":
+      {
+        "document_url":"http://dm-store-aat.service.core-compute-aat.internal/documents/56cc11a5-d902-478f-85d8-7da57c0ddb29",
+        "document_binary_url":"http://dm-store-aat.service.core-compute-aat.internal/documents/56cc11a5-d902-478f-85d8-7da57c0ddb29/binary",
+        "document_filename":"PRL Draft Consent Order.docx"
+      }
+      }],
+    "fl401UploadSupportDocuments":[
+      {
+        "id":null,"value":
+      {
+        "document_url":"http://dm-store-aat.service.core-compute-aat.internal/documents/1c5e2ab5-6ae1-4d14-ac79-a271deb71132",
+        "document_binary_url":"http://dm-store-aat.service.core-compute-aat.internal/documents/1c5e2ab5-6ae1-4d14-ac79-a271deb71132/binary",
+        "document_filename":"PRL Draft Consent Order.docx"
+      }
+      }],
+    "fl401UploadedDocuments":[
+      {
+        "id":null,"value":
+      {
+        "document_url":"http://dm-store-aat.service.core-compute-aat.internal/documents/02a20b35-8099-49f7-b5da-f855a0e688ad",
+        "document_binary_url":"http://dm-store-aat.service.core-compute-aat.internal/documents/02a20b35-8099-49f7-b5da-f855a0e688ad/binary",
+        "document_filename":"PRL Draft Consent Order.docx"
+      }
+      }]
+  },
+  "event_token":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJzam9xa2o1cW9rYnJnbG5wb2dra3BwNGdnbSIsInN1YiI6ImIwYmFiNGM2LTBlZjctNGZmYi04OWVlLTVlNzgzNmQ1NWM4MSIsImlhdCI6MTY0NzQ0OTA4MywiY2FzZS1pZCI6IjQ4Mjc5NTEiLCJldmVudC1pZCI6ImZsNDAxVXBsb2FkRG9jdW1lbnRzIiwiY2FzZS10eXBlLWlkIjoiUFJMQVBQUyIsImp1cmlzZGljdGlvbi1pZCI6IlBSSVZBVEVMQVciLCJjYXNlLXN0YXRlIjoiQVdBSVRJTkdfU1VCTUlTU0lPTl9UT19ITUNUUyIsImNhc2UtdmVyc2lvbiI6IjhkNzU2YmRlOTZhMDc3ZTViNzdiODRlM2MyMDRjN2ZjMDAzMTE1ZWQiLCJlbnRpdHktdmVyc2lvbiI6MzN9.G8UR2WZE2fWv3Lm9haI9vi31ItAABQopAY7ECujOIEU",
+  "ignore_warning":false,
+  "case_reference":"1647252224099105"
+}
