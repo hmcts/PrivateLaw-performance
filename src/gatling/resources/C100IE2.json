@@ -1,0 +1,18 @@
+{
+  "data":
+  {
+    "habitualResidentInOtherState":"No",
+    "habitualResidentInOtherStateGiveReason":null,
+    "jurisdictionIssue":"No",
+    "jurisdictionIssueGiveReason":null,
+    "requestToForeignAuthority":"No",
+    "requestToForeignAuthorityGiveReason":null
+  },
+  "event":
+  {"id":"internationalElement",
+    "summary":"",
+    "description":""
+  },
+  "event_token":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI1b2djZm12NmloMmU3MXUwZWpocGVmMjhhYSIsInN1YiI6ImIwYmFiNGM2LTBlZjctNGZmYi04OWVlLTVlNzgzNmQ1NWM4MSIsImlhdCI6MTY0Nzg3NzQ3NiwiY2FzZS1pZCI6IjQ4NzkzNTAiLCJldmVudC1pZCI6ImludGVybmF0aW9uYWxFbGVtZW50IiwiY2FzZS10eXBlLWlkIjoiUFJMQVBQUyIsImp1cmlzZGljdGlvbi1pZCI6IlBSSVZBVEVMQVciLCJjYXNlLXN0YXRlIjoiQVdBSVRJTkdfU1VCTUlTU0lPTl9UT19ITUNUUyIsImNhc2UtdmVyc2lvbiI6IjE3ZmU2Y2I3ZjI3YTc3NDMyYWJiYjJlMjg0YWZiY2M0YWNhM2U2ZDAiLCJlbnRpdHktdmVyc2lvbiI6MzB9.iTQKs9ON5gGeWJsExefrCyzUwPSuPY9tRRyXzC3DZiM",
+  "ignore_warning":false
+}

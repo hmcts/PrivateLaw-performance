@@ -7,9 +7,10 @@
     "id": "solicitorCreate",
     "summary": ""
   },
-  "event_data": {
+  "event_data":
+  {
     "caseTypeOfApplication": "FL401"
-    "event_token": "${event_token}",
-    "ignore_warning": "false"
-  }
+  },
+  "event_token": "${event_token}",
+  "ignore_warning": "false"
 }

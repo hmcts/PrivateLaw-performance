@@ -1,19 +1,21 @@
 {
-  "data": {
+  "data":
+  {
     "applicantOrRespondentCaseName": "PerformanceTestFL01"
   },
-  "event": {
+  "event":
+  {
     "description": "",
     "id": "solicitorCreate",
     "summary": ""
   },
-  "event_data": {
+  "event_data":
+  {
     "applicantOrRespondentCaseName": "PerformanceTestFL01",
     "caseTypeOfApplication": "FL401",
-    "confidentialityStatementDisclaimer": [
-      "confidentialityStatementUnderstood"
-    ],
-    "event_token": "${event_token}",
-    "ignore_warning": "false"
-  }
+    "confidentialityStatementDisclaimer": ["confidentialityStatementUnderstood"],
+  },
+  "event_token": "${event_token}",
+  "ignore_warning": "false"
 }
+

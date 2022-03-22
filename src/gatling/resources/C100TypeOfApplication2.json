@@ -1,9 +1,7 @@
 {
   "data":
   {
-    "ordersApplyingFor":["childArrangementsOrder"],
-    "typeOfChildArrangementsOrder":"spendTimeWithOrder",
-    "natureOfOrder":"SpendTimeWithOrder"
+    "applicationPermissionRequired":"noNotRequired"
   },
   "event":
   {
@@ -15,7 +13,14 @@
   {
     "ordersApplyingFor":["childArrangementsOrder"],
     "typeOfChildArrangementsOrder":"spendTimeWithOrder",
-    "natureOfOrder":"SpendTimeWithOrder"
+    "natureOfOrder":"SpendTimeWithOrder",
+    "consentOrder":"Yes",
+    "draftConsentOrderFile":
+    {
+      "document_url":"http://dm-store-aat.service.core-compute-aat.internal/documents/a21117fd-60bc-408d-ab5b-bb28493e880d","document_binary_url":"http://dm-store-aat.service.core-compute-aat.internal/documents/a21117fd-60bc-408d-ab5b-bb28493e880d/binary",
+      "document_filename":"PRL Draft Consent Order.docx"
+    },
+    "applicationPermissionRequired":"noNotRequired"
   },
   "event_token":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJvZ2QzZGE4czY4b3J0cnB0N2g1Z3UzYjZtbCIsInN1YiI6ImIwYmFiNGM2LTBlZjctNGZmYi04OWVlLTVlNzgzNmQ1NWM4MSIsImlhdCI6MTY0NzY4NzI3MSwiY2FzZS1pZCI6IjQ4NzkzNTAiLCJldmVudC1pZCI6InNlbGVjdEFwcGxpY2F0aW9uVHlwZSIsImNhc2UtdHlwZS1pZCI6IlBSTEFQUFMiLCJqdXJpc2RpY3Rpb24taWQiOiJQUklWQVRFTEFXIiwiY2FzZS1zdGF0ZSI6IkFXQUlUSU5HX1NVQk1JU1NJT05fVE9fSE1DVFMiLCJjYXNlLXZlcnNpb24iOiIwYzJlM2I0NGVhM2NhOWMyNzkzYTZmMzgxYTEzZTEyNjkzYmMxMWNmIiwiZW50aXR5LXZlcnNpb24iOjF9.PTZHkJ6qdyIKrmTcv2r-MR-AlRL7rb7e81wCkoJp67k",
   "ignore_warning":false,

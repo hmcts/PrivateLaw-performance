@@ -1,0 +1,35 @@
+{
+  "data":
+  {
+    "mediatorRegistrationNumber":"1234567890123456",
+    "familyMediatorServiceName":"Test",
+    "soleTraderName":"Test",
+    "miamCertificationDocumentUpload":
+    {
+      "document_url":"http://dm-store-aat.service.core-compute-aat.internal/documents/5a6cdd2f-6997-406a-84e7-075de7aa73f0",
+      "document_binary_url":"http://dm-store-aat.service.core-compute-aat.internal/documents/5a6cdd2f-6997-406a-84e7-075de7aa73f0/binary",
+      "document_filename":"PRL Draft Consent Order.docx"
+    }
+  },
+  "event":
+  {
+    "id":"miam",
+    "summary":"",
+    "description":""
+  },"event_data":
+{
+  "applicantAttendedMiam":"Yes",
+  "mediatorRegistrationNumber":"1234567890123456",
+  "familyMediatorServiceName":"Test",
+  "soleTraderName":"Test",
+  "miamCertificationDocumentUpload":
+  {
+    "document_url":"http://dm-store-aat.service.core-compute-aat.internal/documents/5a6cdd2f-6997-406a-84e7-075de7aa73f0",
+    "document_binary_url":"http://dm-store-aat.service.core-compute-aat.internal/documents/5a6cdd2f-6997-406a-84e7-075de7aa73f0/binary",
+    "document_filename":"PRL Draft Consent Order.docx"
+  }
+},
+  "event_token":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkNnJmcWY5aDBrcXVpZnRhdmQ4MXUwcWgxbyIsInN1YiI6ImIwYmFiNGM2LTBlZjctNGZmYi04OWVlLTVlNzgzNmQ1NWM4MSIsImlhdCI6MTY0Nzg2NjkzMiwiY2FzZS1pZCI6IjQ4NzkzNTAiLCJldmVudC1pZCI6Im1pYW0iLCJjYXNlLXR5cGUtaWQiOiJQUkxBUFBTIiwianVyaXNkaWN0aW9uLWlkIjoiUFJJVkFURUxBVyIsImNhc2Utc3RhdGUiOiJBV0FJVElOR19TVUJNSVNTSU9OX1RPX0hNQ1RTIiwiY2FzZS12ZXJzaW9uIjoiMmZmY2NkNmIyM2M5Y2U2MGQzZGNiZGFlODEzMzM1YjM0OGE4MmE3MiIsImVudGl0eS12ZXJzaW9uIjoxNX0.zL-hX2uKVSnQ-t-c92AbdId41b4iD0jDV2KIz6BMyK8",
+  "ignore_warning":false,
+  "case_reference":"1647686455589468"
+}

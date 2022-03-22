@@ -1,0 +1,17 @@
+{
+  "data":
+  {
+    "applicantAttendedMiam":"Yes"
+  },
+  "event":
+  {
+    "id":"miam","summary":"","description":""
+  },
+  "event_data":
+  {
+    "applicantAttendedMiam":"Yes"
+  },
+  "event_token":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJkNnJmcWY5aDBrcXVpZnRhdmQ4MXUwcWgxbyIsInN1YiI6ImIwYmFiNGM2LTBlZjctNGZmYi04OWVlLTVlNzgzNmQ1NWM4MSIsImlhdCI6MTY0Nzg2NjkzMiwiY2FzZS1pZCI6IjQ4NzkzNTAiLCJldmVudC1pZCI6Im1pYW0iLCJjYXNlLXR5cGUtaWQiOiJQUkxBUFBTIiwianVyaXNkaWN0aW9uLWlkIjoiUFJJVkFURUxBVyIsImNhc2Utc3RhdGUiOiJBV0FJVElOR19TVUJNSVNTSU9OX1RPX0hNQ1RTIiwiY2FzZS12ZXJzaW9uIjoiMmZmY2NkNmIyM2M5Y2U2MGQzZGNiZGFlODEzMzM1YjM0OGE4MmE3MiIsImVudGl0eS12ZXJzaW9uIjoxNX0.zL-hX2uKVSnQ-t-c92AbdId41b4iD0jDV2KIz6BMyK8",
+  "ignore_warning":false,
+  "case_reference":"1647686455589468"
+}

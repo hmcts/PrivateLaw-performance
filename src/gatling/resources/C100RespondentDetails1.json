@@ -1,0 +1,127 @@
+{
+  "data":
+  {
+    "respondents":[
+      {
+        "value":
+        {
+          "firstName":"Jenny",
+          "lastName":"Mother",
+          "previousName":null,
+          "isDateOfBirthKnown":"Yes",
+          "dateOfBirth":"1980-01-01",
+          "gender":"female",
+          "otherGender":null,
+          "isPlaceOfBirthKnown":"Yes",
+          "placeOfBirth":"London",
+          "isCurrentAddressKnown":"Yes",
+          "isAtAddressLessThan5YearsWithDontKnow":"no",
+          "addressLivedLessThan5YearsDetails":null,
+          "canYouProvideEmailAddress":"Yes",
+          "email":"Mother@test.com",
+          "canYouProvidePhoneNumber":"Yes",
+          "phoneNumber":"07777777777",
+          "doTheyHaveLegalRepresentation":"yes",
+          "representativeFirstName":"Mothers",
+          "representativeLastName":"Solicitor",
+          "solicitorEmail":"Mother@Test.com",
+          "dxNumber":"1234567890",
+          "sendSignUpLink":null,
+          "isDateOfBirthUnknown":null,
+          "isAddressUnknown":null,
+          "isAddressConfidential":null,
+          "isAtAddressLessThan5Years":null,
+          "isEmailAddressConfidential":null,
+          "landline":null,
+          "isPhoneNumberConfidential":null,
+          "relationshipToChildren":null,
+          "solicitorReference":null,
+          "solicitorTelephone":null,
+          "respondentLivedWithApplicant":null,
+          "address":
+          {
+            "AddressLine1":"Flat 3",
+            "AddressLine2":"214 Westferry Road",
+            "AddressLine3":"",
+            "PostTown":"London",
+            "County":"",
+            "PostCode":"E14 3RR",
+            "Country":"United Kingdom"
+          },
+          "solicitorOrg":
+          {
+            "OrganisationID":"6SFJUH7",
+            "OrganisationName":"Aat orgtest57"
+          }
+        },
+        "id":null
+      }]
+  },
+  "event":
+  {
+    "id":"respondentsDetails",
+    "summary":"",
+    "description":""
+  },
+  "event_data":
+  {
+    "respondents":[
+    {
+      "value":
+      {
+        "firstName":"Jenny",
+        "lastName":"Mother",
+        "previousName":null,
+        "isDateOfBirthKnown":"Yes",
+        "dateOfBirth":"1980-01-01",
+        "gender":"female",
+        "otherGender":null,
+        "isPlaceOfBirthKnown":"Yes",
+        "placeOfBirth":"London",
+        "isCurrentAddressKnown":"Yes",
+        "isAtAddressLessThan5YearsWithDontKnow":"no",
+        "addressLivedLessThan5YearsDetails":null,
+        "canYouProvideEmailAddress":"Yes",
+        "email":"Mother@test.com",
+        "canYouProvidePhoneNumber":"Yes",
+        "phoneNumber":"07777777777",
+        "doTheyHaveLegalRepresentation":"yes",
+        "representativeFirstName":"Mothers",
+        "representativeLastName":"Solicitor",
+        "solicitorEmail":"Mother@Test.com",
+        "dxNumber":"1234567890",
+        "sendSignUpLink":null,
+        "isDateOfBirthUnknown":null,
+        "isAddressUnknown":null,
+        "isAddressConfidential":null,
+        "isAtAddressLessThan5Years":null,
+        "isEmailAddressConfidential":null,
+        "landline":null,
+        "isPhoneNumberConfidential":null,
+        "relationshipToChildren":null,
+        "solicitorReference":null,
+        "solicitorTelephone":null,
+        "respondentLivedWithApplicant":null,
+        "address":
+        {
+          "AddressLine1":"Flat 3",
+          "AddressLine2":"214 Westferry Road",
+          "AddressLine3":"",
+          "PostTown":"London",
+          "County":"",
+          "PostCode":"E14 3RR",
+          "Country":"United Kingdom"
+        },
+        "solicitorOrg":
+        {
+          "OrganisationID":"6SFJUH7",
+          "OrganisationName":"Aat orgtest57"
+        }
+      },
+      "id":null
+    }]
+  },
+  "event_token":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJjYmQxZXFmM21qNTBvNmw1b25mZW10YWhjbSIsInN1YiI6ImIwYmFiNGM2LTBlZjctNGZmYi04OWVlLTVlNzgzNmQ1NWM4MSIsImlhdCI6MTY0Nzg2NDk3NCwiY2FzZS1pZCI6IjQ4NzkzNTAiLCJldmVudC1pZCI6InJlc3BvbmRlbnRzRGV0YWlscyIsImNhc2UtdHlwZS1pZCI6IlBSTEFQUFMiLCJqdXJpc2RpY3Rpb24taWQiOiJQUklWQVRFTEFXIiwiY2FzZS1zdGF0ZSI6IkFXQUlUSU5HX1NVQk1JU1NJT05fVE9fSE1DVFMiLCJjYXNlLXZlcnNpb24iOiIyMGIyYTdkMmE4N2IyYjNkZmE3MzVmNGUxOGUwZWIwMzVkYWU1NGE0IiwiZW50aXR5LXZlcnNpb24iOjEzfQ.zleIUEgppkCHRZdgoMhYEYN0MZrlUeJJi-OfJX2XyKg",
+  "ignore_warning":false,
+  "case_reference":"1647686455589468"
+}

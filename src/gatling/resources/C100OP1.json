@@ -1,0 +1,19 @@
+{
+  "data":
+  {
+    "previousOrOngoingProceedingsForChildren":"no"
+  },
+  "event":
+  {
+    "id":"otherProceedings",
+    "summary":"",
+    "description":""
+  },
+  "event_data":
+  {
+    "previousOrOngoingProceedingsForChildren":"no"
+  },
+  "event_token":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJtOWY4cmJzZWhmcDMzamtldnVrNTF0ZXJhZiIsInN1YiI6ImIwYmFiNGM2LTBlZjctNGZmYi04OWVlLTVlNzgzNmQ1NWM4MSIsImlhdCI6MTY0Nzg3NjM2NywiY2FzZS1pZCI6IjQ4NzkzNTAiLCJldmVudC1pZCI6Im90aGVyUHJvY2VlZGluZ3MiLCJjYXNlLXR5cGUtaWQiOiJQUkxBUFBTIiwianVyaXNkaWN0aW9uLWlkIjoiUFJJVkFURUxBVyIsImNhc2Utc3RhdGUiOiJBV0FJVElOR19TVUJNSVNTSU9OX1RPX0hNQ1RTIiwiY2FzZS12ZXJzaW9uIjoiM2Y3Y2FhZDEwYzMwYjBjNzRkNzFmNTRkMzc0NTY1NmE2M2U4MTFhYyIsImVudGl0eS12ZXJzaW9uIjoyNH0.w1NoF9bJRylOoPIIMNwpWkm38pdk7IK2G7_auMUkj0A",
+  "ignore_warning":false,
+  "case_reference":"1647686455589468"
+}

@@ -1,0 +1,25 @@
+{
+  "data":
+  {
+    "isCaseUrgent":"No",
+    "doYouNeedAWithoutNoticeHearing":"No",
+    "doYouRequireAHearingWithReducedNotice":"No",
+    "areRespondentsAwareOfProceedings":"No"
+  },
+  "event":
+  {
+    "id":"hearingUrgency",
+    "summary":"",
+    "description":""
+  },
+  "event_data":
+  {
+    "isCaseUrgent":"No",
+    "doYouNeedAWithoutNoticeHearing":"No",
+    "doYouRequireAHearingWithReducedNotice":"No",
+    "areRespondentsAwareOfProceedings":"No"
+  },
+  "event_token":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJyc28xa2c4N2tqdDJiaW5mdW9tdGVtNmMwYyIsInN1YiI6ImIwYmFiNGM2LTBlZjctNGZmYi04OWVlLTVlNzgzNmQ1NWM4MSIsImlhdCI6MTY0Nzg1Mjg5MCwiY2FzZS1pZCI6IjQ4NzkzNTAiLCJldmVudC1pZCI6ImhlYXJpbmdVcmdlbmN5IiwiY2FzZS10eXBlLWlkIjoiUFJMQVBQUyIsImp1cmlzZGljdGlvbi1pZCI6IlBSSVZBVEVMQVciLCJjYXNlLXN0YXRlIjoiQVdBSVRJTkdfU1VCTUlTU0lPTl9UT19ITUNUUyIsImNhc2UtdmVyc2lvbiI6ImVhMGFiZDIwOTdhYjc5MmY1MmE1ZTEwODk3NjcxZTNlOTI2ODNjZWYiLCJlbnRpdHktdmVyc2lvbiI6NH0.FEy4hduq6lpmLjK-mO75ViJFTtENozFet7rhv7EVUW4",
+  "ignore_warning":false,
+  "case_reference":"1647686455589468"
+}

@@ -1,0 +1,17 @@
+{
+  "data":
+  {
+    "litigationCapacityFactors":"LC",
+    "litigationCapacityReferrals":"LC",
+    "litigationCapacityOtherFactors":"No",
+    "litigationCapacityOtherFactorsDetails":null
+  },
+  "event":
+  {
+    "id":"litigationCapacity",
+    "summary":"",
+    "description":""
+  },
+  "event_token":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJma3VqY211YXE1cnMwdmRubWFnODdyZDNyaCIsInN1YiI6ImIwYmFiNGM2LTBlZjctNGZmYi04OWVlLTVlNzgzNmQ1NWM4MSIsImlhdCI6MTY0Nzg3ODA0NywiY2FzZS1pZCI6IjQ4NzkzNTAiLCJldmVudC1pZCI6ImxpdGlnYXRpb25DYXBhY2l0eSIsImNhc2UtdHlwZS1pZCI6IlBSTEFQUFMiLCJqdXJpc2RpY3Rpb24taWQiOiJQUklWQVRFTEFXIiwiY2FzZS1zdGF0ZSI6IkFXQUlUSU5HX1NVQk1JU1NJT05fVE9fSE1DVFMiLCJjYXNlLXZlcnNpb24iOiJjZjRlYmNjYjZmNTAyZDJkYThiMzA5YjlhNDFiODY0NjdhMzZhZTFmIiwiZW50aXR5LXZlcnNpb24iOjMyfQ.CwTrPWzA2cIumayDxbssdLB-6q-MBuFLGZ30CxjMssQ",
+  "ignore_warning":false
+}
