@@ -1,7 +1,7 @@
 {
   "searchRequest":
   {
-    "ccdId":"1647686455589468",
+    "ccdId":"${id}}",
     "eventId":"selectApplicationType",
     "jurisdiction":"PRIVATELAW",
     "caseTypeId":"PRLAPPS"

@@ -2,6 +2,9 @@ package uk.gov.hmcts.paybubble.scenario
 
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
+import uk.gov.hmcts.paybubble.util.{CommonHeader, CommonHeaderC100, Environment, LoginHeader}
+import net.sf.saxon.functions.BaseUri_1
+import uk.gov.hmcts.paybubble.scenario.PrivateLawLogin.{baseURL, orgDomain}
 
 object PrivateLawC100 {
 
@@ -10,6 +13,7 @@ object PrivateLawC100 {
   val orgDomain = Environment.baseDomainOrg
   val MinThinkTime = Environment.minThinkTime
   val MaxThinkTime = Environment.maxThinkTime
+  val feederCaseName = csv("caseNames.csv").circular
 
   //====================================================================================
   //CreateCase
@@ -24,48 +28,67 @@ object PrivateLawC100 {
   val Cases =
 
     group("PRL_010_Cases") {
-      exec(http("PRL_010_005_Cases")
+    //  exec(http("PRL_010_005_Cases")
 
-        .get(baseURL + "cases")
-        .headers(CommonHeader.headers_Cases)
-        .check(status.in(200, 304))).exitHereIfFailed
-        .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
-      exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+        exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
         .exec(getCookieValue(CookieKey("__auth__").withDomain("manage-case.aat.platform.hmcts.net").saveAs("authTokenResp")))
 
-    }
+        .exec(http("PRL Case Filter")
+          .get(baseURL + "/aggregated/caseworkers/:uid/jurisdictions?access=create")
+          .headers(CommonHeaderC100.get_Header)
+          .body(ElFileBody("C100CreateCaseJuristinction.json"))
+          .check(substring("Event")))
 
+
+
+    }
       .pause(MinThinkTime, MaxThinkTime)
+
+
+
 
   //==================================================================================
   //Business process : Click Create Case
   //==================================================================================
   val CreateCases =
 
+  /*
+   group("PRL_C100_010_CreateCase") {
+     exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+       .exec(getCookieValue(CookieKey("__auth__").withDomain("manage-case.aat.platform.hmcts.net").saveAs("authTokenResp")))
 
-  group("PRL_C100_010_CreateCase") {
-    exec(http("PRL_C100_010_CreateCase")
-      .get(baseURL + "aggregated/caseworkers/:uid/jurisdictions?access=create")
-      .headers(CommonHeader.headers_CreateCases)
-      .check(status.in(200, 304))).exitHereIfFailed
-      .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
-  }
+     .exec(http("PRL_C100_010_CreateCase")
+       .get(baseURL + "/data/internal/case-types/C100/event-triggers/solicitorCreate?ignore-warning=false")
+       .headers(CommonHeaderC100.case_Type_Get_Header)
+       .check(jsonPath("$.event_token").saveAs("event_token"))
+       .check(status.in(200, 304)))
+       .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+   }
+
+  */
 
   group("PRL_C100_020_CreateCase") {
-    exec(http("PRL_C100_020_CreateCase")
+    exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+      .exec(getCookieValue(CookieKey("__auth__").withDomain("manage-case.aat.platform.hmcts.net").saveAs("authTokenResp")))
+
+    .exec(http("PRL_C100_020_CreateCase")
       .get(baseURL + "/data/internal/case-types/PRLAPPS/event-triggers/solicitorCreate?ignore-warning=false")
       .headers(CommonHeader.headers_CreateCases)
-      .check(status.in(200, 304))).exitHereIfFailed
+      .header("x-xsrf-token", "${XSRFToken}")
+      .check(jsonPath("$.event_token").saveAs("event_token"))
+      .check(status.in(200, 304)))
       .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+      .exec(getCookieValue(CookieKey("__auth__").withDomain("manage-case.aat.platform.hmcts.net").saveAs("authTokenResp")))
   }
 
     .group("PRL_C100_030_StartCreateCaseFL01") {
       exec(http("PRL_C100_030_StartCreateCaseFPL01")
-        .post(baseURL + "data/case-types/PRLAPPS/validate?pageId=solicitorCreate2")
+        .post(baseURL + "/data/case-types/PRLAPPS/validate?pageId=solicitorCreate2")
         .headers(CommonHeader.headers_CreateCases)
         .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
         .header("x-xsrf-token", "${XSRFToken}")
-        .body(ElFileBody("C100StartCreateCase.json")))
+        .body(ElFileBody("C100StartCreateCase.json"))
+        .check(status.in(200, 304)))
         .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
     }
     .pause(MinThinkTime, MaxThinkTime)
@@ -81,14 +104,18 @@ object PrivateLawC100 {
     }
     .pause(MinThinkTime, MaxThinkTime)
 
+
+
     .group("PRL_C100_050_CaseName") {
       exec(http("PRL_C100_050_CaseName")
         .post(baseURL + "/data/case-types/PRLAPPS/validate?pageId=solicitorCreate4")
         .headers(CommonHeader.headers_CreateCases)
         .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
         .header("x-xsrf-token", "${XSRFToken}")
-        .body(ElFileBody("C100Confidentiality.json")))
+        .body(ElFileBody("C100CaseCreateDetails.json"))
+        .check(substring("Jack")))
         .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+        .exec(getCookieValue(CookieKey("__auth__").withDomain("manage-case.aat.platform.hmcts.net").saveAs("authTokenResp")))
     }
     .pause(MinThinkTime, MaxThinkTime)
 
@@ -96,20 +123,11 @@ object PrivateLawC100 {
       exec(http("PRL_C100_060_Create")
         .post(baseURL + "/data/case-types/PRLAPPS/cases?ignore-warning=false")
         .headers(CommonHeader.headers_CreateCases)
-        .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+        .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.create-case.v2+json;charset=UTF-8")
         .header("x-xsrf-token", "${XSRFToken}")
-        .body(ElFileBody("C100Create.json")))
-        .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
-    }
-    .pause(MinThinkTime, MaxThinkTime)
-
-    .group("PRL_C100_070_Create") {
-      exec(http("PRL_C100_070_Create")
-        .post(baseURL + "/data/case-types/PRLAPPS/cases?ignore-warning=false")
-        .headers(CommonHeader.headers_CreateCases)
-        .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
-        .header("x-xsrf-token", "${XSRFToken}")
-        .body(ElFileBody("C100Create.json")))
+        .body(ElFileBody("C100Create.json"))
+        .check(jsonPath("$.id").saveAs("id"))
+        .check(substring("${id}")))
         .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
     }
     .pause(MinThinkTime, MaxThinkTime)
@@ -118,7 +136,7 @@ object PrivateLawC100 {
       exec(http("PRL_C100_080_Create")
         .post(baseURL + "/workallocation/searchForCompletable")
         .headers(CommonHeader.headers_CreateCases)
-        .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+        .header("accept", "application/json")
         .header("x-xsrf-token", "${XSRFToken}")
         .body(ElFileBody("C100Create1.json")))
         .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
@@ -131,13 +149,12 @@ object PrivateLawC100 {
 
     group("PRL_C100_090_TypeOfApplication1") {
       exec(http("PRL_C100_090_TypeOfApplication1")
-        .get(baseURL + "/cases/case-details/1647686455589468/trigger/selectApplicationType/selectApplicationType1")
-        .headers(CommonHeader.headers_CreateCases)
-        .check(status.in(200, 304))).exitHereIfFailed
+        .get(baseURL + "/cases/case-details/${id}/trigger/selectApplicationType/selectApplicationType1")
+        .headers(CommonHeader.headers_CreateCases))
         .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
     }
 
-  group("PRL_C100_100_TypeOfApplication2") {
+  .group("PRL_C100_100_TypeOfApplication2") {
     exec(http("PRL_C100_100_TypeOfApplication2")
       .post(baseURL + "/data/case-types/PRLAPPS/validate?pageId=selectApplicationType1")
       .headers(CommonHeader.headers_CreateCases)
@@ -185,7 +202,7 @@ object PrivateLawC100 {
 
   .group("PRL_C100_140_TypeOfApplication6") {
     exec(http("PRL_C100_140_TypeOfApplication6")
-      .post(baseURL + "/data/cases/1647686455589468/events")
+      .post(baseURL + "/data/cases/${id}}/events")
       .headers(CommonHeader.headers_CreateCases)
       .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
       .header("x-xsrf-token", "${XSRFToken}")
@@ -215,17 +232,18 @@ val HearingUrgency =
       .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
   }
 
-  group("PRL_C100_170_HearingUrgency2") {
+  .group("PRL_C100_170_HearingUrgency2") {
     exec(http("PRL_C100_170_HearingUrgency2")
       .post(baseURL + "/data/case-types/PRLAPPS/validate?pageId=hearingUrgency1")
       .headers(CommonHeader.headers_CreateCases)
       .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
       .header("x-xsrf-token", "${XSRFToken}")
-      .body(ElFileBody("C100HearingUrgency1.json")))
+      .body(ElFileBody("C100HearingUrgency1.json"))
+      .check(status.in(200, 304))).exitHereIfFailed
       .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
   }
     .pause(MinThinkTime, MaxThinkTime)
-    .check(status.in(200, 304))).exitHereIfFailed
+
 
   group("PRL_C100_180_HearingUrgency3") {
     exec(http("PRL_C100_180_HearingUrgency3")
@@ -268,11 +286,11 @@ val ApplicantDetails =
       .headers(CommonHeader.headers_CreateCases)
       .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
       .header("x-xsrf-token", "${XSRFToken}")
-      .body(ElFileBody("C100ApplicantDetails1.json")))
+      .body(ElFileBody("C100ApplicantDetails1.json"))
+      .check(status.in(200, 304))).exitHereIfFailed
       .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
   }
     .pause(MinThinkTime, MaxThinkTime)
-    .check(status.in(200, 304))).exitHereIfFailed
 
   group("PRL_C100_220_ApplicantDetails3") {
     exec(http("PRL_C100_220_ApplicantDetails3")
@@ -291,11 +309,11 @@ val ApplicantDetails =
       .headers(CommonHeader.headers_CreateCases)
       .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
       .header("x-xsrf-token", "${XSRFToken}")
-      .body(ElFileBody("C100ApplicantDetails3.json")))
+      .body(ElFileBody("C100ApplicantDetails3.json"))
+      .check(status.in(200, 304))).exitHereIfFailed
       .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
   }
     .pause(MinThinkTime, MaxThinkTime)
-    .check(status.in(200, 304))).exitHereIfFailed
 
 /////Child Details
 val ChildDetails =
@@ -324,11 +342,11 @@ val ChildDetails =
       .headers(CommonHeader.headers_CreateCases)
       .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
       .header("x-xsrf-token", "${XSRFToken}")
-      .body(ElFileBody("C100ChildDetails2.json")))
+      .body(ElFileBody("C100ChildDetails2.json"))
+      .check(status.in(200, 304))).exitHereIfFailed
       .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
   }
     .pause(MinThinkTime, MaxThinkTime)
-    .check(status.in(200, 304))).exitHereIfFailed
 
 
   group("PRL_C100_270_ChildDetails4") {
@@ -337,11 +355,11 @@ val ChildDetails =
       .headers(CommonHeader.headers_CreateCases)
       .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
       .header("x-xsrf-token", "${XSRFToken}")
-      .body(ElFileBody("C100ChildDetails3.json")))
+      .body(ElFileBody("C100ChildDetails3.json"))
+      .check(status.in(200, 304))).exitHereIfFailed
       .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
   }
     .pause(MinThinkTime, MaxThinkTime)
-    .check(status.in(200, 304))).exitHereIfFailed
 
   group("PRL_C100_280_ChildDetails5") {
     exec(http("PRL_C100_280_ChildDetails5")
@@ -349,11 +367,12 @@ val ChildDetails =
       .headers(CommonHeader.headers_CreateCases)
       .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
       .header("x-xsrf-token", "${XSRFToken}")
-      .body(ElFileBody("C100ChildDetails4.json")))
+      .body(ElFileBody("C100ChildDetails4.json"))
+      .check(status.in(200, 304))).exitHereIfFailed
       .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
   }
     .pause(MinThinkTime, MaxThinkTime)
-    .check(status.in(200, 304))).exitHereIfFailed
+
 
 
 
@@ -705,11 +724,12 @@ val LitigationCapacity =
       .headers(CommonHeader.headers_CreateCases)
       .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
       .header("x-xsrf-token", "${XSRFToken}")
-      .body(ElFileBody("C100LC3.json")))
+      .body(ElFileBody("C100LC3.json"))
+      .check(status.in(200, 304))).exitHereIfFailed
       .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
   }
     .pause(MinThinkTime, MaxThinkTime)
-    .check(status.in(200, 304))).exitHereIfFailed
+
 
 /////WelshLanguage
 val WelshLanguage =
@@ -755,7 +775,8 @@ val WelshLanguage =
     .pause(MinThinkTime, MaxThinkTime)
 
 /////SubmitandPay
-val SubmitandPay =
+
+val SubmitAndPay =
   group("PRL_C100_650_Submit1") {
     exec(http("PRL_C100_650_Submit1")
       .get(baseURL + "/cases/case-details/1647686455589468/trigger/submitAndPay/submitAndPay1")
@@ -794,11 +815,12 @@ val SubmitandPay =
       .headers(CommonHeader.headers_CreateCases)
       .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
       .header("x-xsrf-token", "${XSRFToken}")
-      .body(ElFileBody("C100Submit3.json")))
+      .body(ElFileBody("C100Submit3.json"))
+      .check(status.in(200, 304))).exitHereIfFailed
       .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
   }
     .pause(MinThinkTime, MaxThinkTime)
-    .check(status.in(200, 304))).exitHereIfFailed
+
 
   group("PRL_C100_690_Submit5") {
     exec(http("PRL_C100_690_Submit5")
@@ -806,11 +828,11 @@ val SubmitandPay =
       .headers(CommonHeader.headers_CreateCases)
       .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
       .header("x-xsrf-token", "${XSRFToken}")
-      .body(ElFileBody("C100Submit4.json")))
+      .body(ElFileBody("C100Submit4.json"))
+      .check(status.in(200, 304))).exitHereIfFailed
       .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
   }
     .pause(MinThinkTime, MaxThinkTime)
-    .check(status.in(200, 304))).exitHereIfFailed
 
   group("PRL_C100_700_Submit6") {
     exec(http("PRL_C100_700_Submit6")
@@ -877,7 +899,7 @@ val SubmitandPay =
   //==================================================================================
   //Business process : Click Create Case
   //==================================================================================
-  val CreateCases =
+  val CreateCases2 =
 
   group("PRL_C100_020_Create_Case") {
     exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
@@ -938,7 +960,7 @@ val SubmitandPay =
   //Business process : Type of Application
   //==================================================================================
 
-  val TypeOfApplication =
+  val TypeOfApplicationAgain =
 
     group("PRL_C100_060_Application_Type") {
       exec(http("PRL_010_Confidentiality Statement")
@@ -1013,7 +1035,7 @@ val SubmitandPay =
       }
       .pause(MinThinkTime, MaxThinkTime)
 
-
+/*
   .group("PRL_C100_110_Review_type") {
     exec(http("PRL_010_Confidentiality Statement")
     .post("/data/cases/1647255857298282/events")
@@ -1025,6 +1047,8 @@ val SubmitandPay =
 
 }
 .pause(MinThinkTime, MaxThinkTime)
+
+ */
 
     //==================================================================================
     //Business process : Log out of Paybubble

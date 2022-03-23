@@ -1,5 +1,11 @@
 package uk.gov.hmcts.paybubble.scenario
 
+import io.gatling.core.Predef._
+import io.gatling.http.Predef._
+import uk.gov.hmcts.paybubble.util.{CommonHeader, CommonHeaderC100, Environment, LoginHeader}
+import net.sf.saxon.functions.BaseUri_1
+import uk.gov.hmcts.paybubble.scenario.PrivateLawLogin.{baseURL, orgDomain}
+
 object PrivateLawFL01 {
 
   val IdamUrl = Environment.IdamURL
@@ -133,7 +139,7 @@ object PrivateLawFL01 {
       .body(ElFileBody("FPL01CaseNameSearchforCompletable.json")))
   }
   .pause(MinThinkTime, MaxThinkTime)
-  }
+
   //==================================================================================
   //Business process : Type of Application
   //==================================================================================
@@ -223,6 +229,7 @@ object PrivateLawFL01 {
         .check(status.in(200, 304))).exitHereIfFailed
 
         .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
+    }
 
 
     group("PRL_FL01_130_WithoutNoticeOrderDetails1") {
@@ -299,7 +306,7 @@ object PrivateLawFL01 {
 
         .exec(getCookieValue(CookieKey("XSRF-TOKEN").withDomain(orgDomain).saveAs("XSRFToken")))
     }
-  }
+
   //ApplicantDetails
   val ApplicantDetails =
     group("PRL_FL01_180_ApplicantDetails") {
@@ -401,7 +408,7 @@ object PrivateLawFL01 {
 
 
   //Applicants Family
-  val RespondentDetails =
+  val RespondentDetails2 =
     group("PRL_FL01_240_ApplicantDetails") {
       exec(http("PRL_FL01_240_ApplicantDetails")
         .get(baseURL + "/cases/case-details/1647252224099105/trigger/fl401ApplicantFamilyDetails/fl401ApplicantFamilyDetails1")
@@ -639,6 +646,7 @@ object PrivateLawFL01 {
       .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
       .header("x-xsrf-token", "${XSRFToken}")
       .body(ElFileBody("FPL01AttendingHearing1.json")))
+  }
 
     group("PRL_FL01_420_AttendingHearing2") {
       exec(http("PRL_FL01_420__AttendingHearing2")
@@ -647,6 +655,7 @@ object PrivateLawFL01 {
         .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
         .header("x-xsrf-token", "${XSRFToken}")
         .body(ElFileBody("FPL01AttendingHearing2.json")))
+    }
 
     group("PRL_FL01_421_AttendingHearing3") {
       exec(http("PRL_FL01_421__AttendingHearing3")
@@ -655,6 +664,7 @@ object PrivateLawFL01 {
         .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
         .header("x-xsrf-token", "${XSRFToken}")
         .body(ElFileBody("FPL01AttendingHearing2.json")))
+    }
 
   //Welsh Language
 
@@ -675,6 +685,7 @@ object PrivateLawFL01 {
           .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
           .header("x-xsrf-token", "${XSRFToken}")
           .body(ElFileBody("FPL01Welsh1.json")))
+      }
 
       group("PRL_FL01_450_Welsh2") {
         exec(http("PRL_FL01_450_Welsh2")
@@ -683,6 +694,7 @@ object PrivateLawFL01 {
           .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
           .header("x-xsrf-token", "${XSRFToken}")
           .body(ElFileBody("FPL01Welsh2.json")))
+      }
 
       group("PRL_FL01_451_Welsh3") {
         exec(http("PRL_FL01_451_Welsh3")
@@ -691,6 +703,7 @@ object PrivateLawFL01 {
           .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
           .header("x-xsrf-token", "${XSRFToken}")
           .body(ElFileBody("FPL01Welsh3.json")))
+      }
 
 
   //Upload documents
@@ -712,6 +725,7 @@ object PrivateLawFL01 {
             .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
             .header("x-xsrf-token", "${XSRFToken}")
             .body(ElFileBody("FPL01UploadDoc1.json")))
+        }
 
 
           group("PRL_FL01_480_UploadDoc2") {
@@ -721,6 +735,7 @@ object PrivateLawFL01 {
               .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
               .header("x-xsrf-token", "${XSRFToken}")
               .body(ElFileBody("FPL01UploadDoc2.json")))
+          }
 
             group("PRL_FL01_490_UploadDoc3") {
               exec(http("PRL_FL01_490_UploadDoc3")
@@ -729,14 +744,17 @@ object PrivateLawFL01 {
                 .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
                 .header("x-xsrf-token", "${XSRFToken}")
                 .body(ElFileBody("FPL01UploadDoc3.json")))
+            }
 
             group("PRL_FL01_491_UploadDoc4") {
-                exec(http("PRL_FL01_491_UploadDoc4")
-                  .post(baseURL + "/workallocation/searchForCompletable")
-                  .headers(CommonHeader.headers_ApplicantsFamiliy)
-                  .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
-                  .header("x-xsrf-token", "${XSRFToken}")
-                  .body(ElFileBody("FPL01UploadDoc4.json")))
+              exec(http("PRL_FL01_491_UploadDoc4")
+                .post(baseURL + "/workallocation/searchForCompletable")
+                .headers(CommonHeader.headers_ApplicantsFamiliy)
+                .header("accept", "application/vnd.uk.gov.hmcts.ccd-data-store-api.case-data-validate.v2+json;charset=UTF-8")
+                .header("x-xsrf-token", "${XSRFToken}")
+                .body(ElFileBody("FPL01UploadDoc4.json")))
+            }
+
 
   val StatementOfTruth =
   group("PRL_FL01_500_SoT") {

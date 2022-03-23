@@ -78,11 +78,12 @@ CCPaybubbleSCN extends Simulation {
 			.exec(PrivateLawLogin.PRLLogin)
 			.exec(PrivateLawC100.Cases)
 			.exec(PrivateLawC100.CreateCases)
+			.exec(PrivateLawC100.TypeOfApplication)
 	}
 
 //PrivateLaw - Test
 	setUp(
-		C100.inject(rampUsers(1) during (1 minutes)).protocols(httpProtocol)
+		C100.inject(rampUsers(1) during (10 minutes)).protocols(httpProtocol)
 	).maxDuration(1 minutes)
 
 	/*setUp(
